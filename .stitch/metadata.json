@@ -1,0 +1,101 @@
+{
+  "projectId": "14619210777894459015",
+  "projectName": "projects/14619210777894459015",
+  "title": "SubShare",
+  "deviceType": "MOBILE",
+  "designSystemId": "assets/8b524a330e5847a3a81e5edb9aa37031",
+  "createdAt": "2026-09-10T10:23:00+05:30",
+  "updatedAt": "2026-09-10T11:10:00+05:30",
+  "screens": {
+    "splash-welcome": {
+      "screenId": "f36afa9d0e604c9b9727c22a64fdb0eb",
+      "resourceName": "projects/14619210777894459015/screens/f36afa9d0e604c9b9727c22a64fdb0eb",
+      "title": "SubShare - Welcome & Splash",
+      "width": 780,
+      "height": 1788,
+      "htmlPath": ".stitch/designs/splash-welcome.html",
+      "pngPath": ".stitch/designs/splash-welcome.png"
+    },
+    "auth-flow": {
+      "screenId": "cac541458d0548cda3219c4ed000f218",
+      "resourceName": "projects/14619210777894459015/screens/cac541458d0548cda3219c4ed000f218",
+      "title": "SubShare - Phone OTP Verification",
+      "width": 780,
+      "height": 2036,
+      "htmlPath": ".stitch/designs/auth-flow.html",
+      "pngPath": ".stitch/designs/auth-flow.png"
+    },
+    "profile-setup": {
+      "screenId": "6d60883402fc4bd9bfd61630b23d4942",
+      "resourceName": "projects/14619210777894459015/screens/6d60883402fc4bd9bfd61630b23d4942",
+      "title": "SubShare - Complete Your Profile",
+      "width": 780,
+      "height": 2624,
+      "htmlPath": ".stitch/designs/profile-setup.html",
+      "pngPath": ".stitch/designs/profile-setup.png"
+    },
+    "home-dashboard": {
+      "screenId": "dcd9d01eb75f42919ee6731e611cca09",
+      "resourceName": "projects/14619210777894459015/screens/dcd9d01eb75f42919ee6731e611cca09",
+      "title": "SubShare - Home Dashboard",
+      "width": 780,
+      "height": 3568,
+      "htmlPath": ".stitch/designs/home-dashboard.html",
+      "pngPath": ".stitch/designs/home-dashboard.png"
+    },
+    "service-listings": {
+      "screenId": "f77f66ad0fda47b09482d5093680f6f5",
+      "resourceName": "projects/14619210777894459015/screens/f77f66ad0fda47b09482d5093680f6f5",
+      "title": "SubShare - Service Listing Feed",
+      "width": 780,
+      "height": 4278,
+      "htmlPath": ".stitch/designs/service-listings.html",
+      "pngPath": ".stitch/designs/service-listings.png"
+    },
+    "listing-detail": {
+      "screenId": "a075f2e5731e4405b79b0ee7ee4a34d9",
+      "resourceName": "projects/14619210777894459015/screens/a075f2e5731e4405b79b0ee7ee4a34d9",
+      "title": "SubShare - Listing Detail",
+      "width": 780,
+      "height": 3378,
+      "htmlPath": ".stitch/designs/listing-detail.html",
+      "pngPath": ".stitch/designs/listing-detail.png"
+    },
+    "activity-status": {
+      "screenId": "b175bef6adca41ac92e4d769319b44d0",
+      "resourceName": "projects/14619210777894459015/screens/b175bef6adca41ac92e4d769319b44d0",
+      "title": "SubShare - Activity & Exchanges",
+      "width": 780,
+      "height": 3646,
+      "htmlPath": ".stitch/designs/activity-status.html",
+      "pngPath": ".stitch/designs/activity-status.png"
+    },
+    "private-chat": {
+      "screenId": "1d4d11e54a0b49e4af1e45e61b7184be",
+      "resourceName": "projects/14619210777894459015/screens/1d4d11e54a0b49e4af1e45e61b7184be",
+      "title": "SubShare - Private Encrypted Chat",
+      "width": 780,
+      "height": 2694,
+      "htmlPath": ".stitch/designs/private-chat.html",
+      "pngPath": ".stitch/designs/private-chat.png"
+    },
+    "profile-trust": {
+      "screenId": "f8be088b5b634815bbd77ea2a9a32942",
+      "resourceName": "projects/14619210777894459015/screens/f8be088b5b634815bbd77ea2a9a32942",
+      "title": "SubShare - Profile & Trust Center",
+      "width": 780,
+      "height": 3824,
+      "htmlPath": ".stitch/designs/profile-trust.html",
+      "pngPath": ".stitch/designs/profile-trust.png"
+    },
+    "admin-dashboard": {
+      "screenId": "a8de3a473d0143eda23ca00131e64930",
+      "resourceName": "projects/14619210777894459015/screens/a8de3a473d0143eda23ca00131e64930",
+      "title": "SubShare - Admin Moderation & Verification Dashboard",
+      "width": 780,
+      "height": 3824,
+      "htmlPath": ".stitch/designs/admin-dashboard.html",
+      "pngPath": ".stitch/designs/admin-dashboard.png"
+    }
+  }
+}

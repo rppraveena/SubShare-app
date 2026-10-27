@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SubShare - Activity &amp; Exchanges</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-variant": "#d9e2fc",
+            "outline": "#737686",
+            "on-secondary-container": "#007230",
+            "inverse-surface": "#273044",
+            "on-secondary-fixed": "#002109",
+            "on-surface": "#121b2e",
+            "tertiary-container": "#a65900",
+            "inverse-on-surface": "#edf0ff",
+            "on-secondary-fixed-variant": "#005320",
+            "secondary-fixed": "#7ffc97",
+            "secondary-container": "#7cf994",
+            "on-surface-variant": "#434655",
+            "surface": "#f9f9ff",
+            "on-error-container": "#93000a",
+            "background": "#f9f9ff",
+            "on-primary-container": "#eeefff",
+            "tertiary-fixed": "#ffdcc3",
+            "on-secondary": "#ffffff",
+            "secondary": "#006e2d",
+            "primary-container": "#2563eb",
+            "error": "#ba1a1a",
+            "primary-fixed-dim": "#b4c5ff",
+            "inverse-primary": "#b4c5ff",
+            "surface-bright": "#f9f9ff",
+            "secondary-fixed-dim": "#62df7d",
+            "surface-container": "#e9edff",
+            "error-container": "#ffdad6",
+            "surface-tint": "#0053db",
+            "on-tertiary": "#ffffff",
+            "tertiary": "#824500",
+            "surface-container-low": "#f1f3ff",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#e1e8ff",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-container": "#ffede1",
+            "on-background": "#121b2e",
+            "primary-fixed": "#dbe1ff",
+            "surface-container-highest": "#d9e2fc",
+            "tertiary-fixed-dim": "#ffb77d",
+            "on-error": "#ffffff",
+            "surface-dim": "#d1daf4",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "primary": "#004ac6",
+            "outline-variant": "#c3c6d7",
+            "on-tertiary-fixed": "#2f1500",
+            "on-primary-fixed": "#00174b",
+            "on-primary-fixed-variant": "#003ea8"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-3xl": "2.5rem",
+            "space-2xl": "2rem",
+            "space-xs": "0.5rem",
+            "space-lg": "1.25rem",
+            "space-xl": "1.5rem",
+            "margin-screen": "1rem",
+            "gutter-grid": "0.75rem",
+            "space-md": "1rem",
+            "space-4xl": "3rem",
+            "space-sm": "0.75rem",
+            "space-xxs": "0.25rem"
+          },
+          "fontFamily": {
+            "body-sm-medium": ["Inter"],
+            "label-mono": ["Inter"],
+            "display-hero": ["Inter"],
+            "headline-h3": ["Inter"],
+            "caption": ["Inter"],
+            "headline-h1": ["Inter"],
+            "body-base": ["Inter"],
+            "title-base": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-h2": ["Inter"],
+            "body-base-medium": ["Inter"]
+          },
+          "fontSize": {
+            "body-sm-medium": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "label-mono": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "display-hero": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "headline-h3": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "caption": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "headline-h1": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-base": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "title-base": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-h2": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-base-medium": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-shadow-card {
+      box-shadow: 0px 1px 2px rgba(23, 32, 51, 0.04), 0px 4px 12px rgba(23, 32, 51, 0.03);
+    }
+    .custom-shadow-nav {
+      box-shadow: 0px -4px 16px rgba(23, 32, 51, 0.05);
+    }
+    .custom-shadow-banner {
+      box-shadow: 0px 2px 8px rgba(37, 99, 235, 0.08);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-base min-h-screen flex justify-center selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Mobile Viewport Container -->
+<div class="w-full max-w-lg min-h-screen flex flex-col bg-background relative pb-28">
+<!-- Top App Bar / Header (Shared Component Spec) -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-margin-screen h-14 max-w-lg mx-auto">
+<!-- Leading: Brand Logo & Emblem -->
+<div class="flex items-center gap-space-xs">
+<img alt="SubShare Emblem" class="w-8 h-8 rounded-lg object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X_QSPZxPlZyiEdo4y5QFTFwt7qOUvcRzsMabqfgJMsfq9FeTyvNOokeeg7DGZ2jNW_ng0MJL0E28PWGSaq7ady88TwdorAwJHdcUQjO9ODhBkX8caAnB8ASFANjqLUN5VYPmp_SXpi9cCJMbUyAZyYxElrvdvccyri6F_4TYNss42vLl55Z3SYXBz-mOBBRm77krQ-m2nDOn9zBuZnnUmLVxpuuMWBSDPcmP1en9DkTSUxLbVCL8TxF3s"/>
+<span class="text-title-base font-title-base font-bold text-primary tracking-tight">SubShare</span>
+</div>
+<!-- Center: Current Screen Title -->
+<h1 class="text-body-sm-medium font-body-sm-medium font-bold text-on-surface">My Activity &amp; Exchanges</h1>
+<!-- Trailing: Action Link / Help -->
+<div class="flex items-center gap-space-xs">
+<button class="flex items-center gap-1 text-body-sm-medium font-body-sm-medium text-primary hover:bg-surface-container px-2 py-1 rounded-lg transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]" data-icon="shield">shield</span>
+<span>Help</span>
+</button>
+</div>
+</div>
+<!-- Active Escrow Protection Banner -->
+<div class="bg-surface-variant/70 border-y border-primary/10 px-margin-screen py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2 overflow-hidden">
+<span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary-container text-white flex items-center justify-center text-xs shadow-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</span>
+<div class="truncate">
+<p class="text-caption font-caption font-semibold text-primary truncate">
+              $240.00 Protected in Escrow <span class="text-outline-variant font-normal">•</span> 2 Active Handovers
+            </p>
+</div>
+</div>
+<button class="flex-shrink-0 text-caption font-caption font-semibold text-primary underline hover:text-on-primary-fixed-variant transition-colors pl-2">
+          View Guarantee
+        </button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin-screen pt-space-md flex flex-col gap-space-md">
+<!-- Segmented Transaction State Tabs -->
+<div class="bg-surface-container-low p-1 rounded-xl flex items-center gap-1 border border-outline-variant/30">
+<button class="flex-1 py-2 px-2 text-center rounded-lg bg-primary-container text-white text-body-sm-medium font-body-sm-medium font-semibold shadow-sm transition-all duration-150">
+          Active (2)
+        </button>
+<button class="flex-1 py-2 px-2 text-center rounded-lg text-on-surface-variant hover:text-on-surface text-body-sm font-body-sm transition-colors">
+          Pending (1)
+        </button>
+<button class="flex-1 py-2 px-2 text-center rounded-lg text-on-surface-variant hover:text-on-surface text-body-sm font-body-sm transition-colors">
+          Completed (14)
+        </button>
+<button class="flex-1 py-2 px-2 text-center rounded-lg text-on-surface-variant hover:text-on-surface text-body-sm font-body-sm transition-colors">
+          History
+        </button>
+</div>
+<!-- State Machine Cards Container -->
+<div class="flex flex-col gap-space-md">
+<!-- CARD 1: Active Ticket Escrow -->
+<article class="bg-surface-container-lowest rounded-[18px] border border-outline-variant/40 custom-shadow-card p-4 flex flex-col gap-3.5 transition-all">
+<!-- Top Row Badges -->
+<div class="flex items-center justify-between gap-2 flex-wrap">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 bg-surface-container-high px-2.5 py-0.5 rounded-full text-caption font-caption font-medium text-on-surface">
+<span class="material-symbols-outlined text-[14px]" data-icon="confirmation_number">confirmation_number</span>
+                Event Passes
+              </span>
+<span class="inline-flex items-center gap-1 bg-surface-variant/70 text-primary px-2.5 py-0.5 rounded-full text-caption font-caption font-medium">
+<span class="material-symbols-outlined text-[13px]" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+                Escrow Protected
+              </span>
+</div>
+<!-- Escrow Status Pill -->
+<span class="inline-flex items-center gap-1 bg-surface-variant text-primary px-2.5 py-1 rounded-full text-label-mono font-label-mono uppercase tracking-wider">
+<span class="material-symbols-outlined text-[13px]" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+              Payment Held In Escrow
+            </span>
+</div>
+<!-- Transaction Summary -->
+<div>
+<h2 class="text-title-base font-title-base text-on-surface leading-tight">Coldplay Concert Pass (2 Passes)</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline" data-icon="location_on">location_on</span>
+              MetLife Stadium • Tomorrow, 7:00 PM
+            </p>
+</div>
+<!-- Counterpart Identity Shield Profile -->
+<div class="bg-surface-container-low rounded-xl p-3 border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-primary font-bold flex items-center justify-center text-sm ring-2 ring-white">
+                SJ
+              </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-body-sm-medium font-body-sm-medium font-semibold text-on-surface">Sarah Jenkins</span>
+<span class="inline-flex items-center text-secondary text-caption font-caption">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<p class="text-caption font-caption text-on-surface-variant flex items-center gap-1">
+<span>Trust Score <strong class="text-primary font-semibold">99/100</strong></span>
+<span class="text-outline">•</span>
+<span>Verified Resident</span>
+</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat_bubble">chat_bubble</span>
+</button>
+</div>
+<!-- 4-Step Horizontal Stepper -->
+<div class="py-2">
+<div class="relative flex items-center justify-between">
+<!-- Connecting Track Bar -->
+<div class="absolute left-3 right-3 top-3 -translate-y-1/2 h-0.5 bg-outline-variant/40 z-0"></div>
+<div class="absolute left-3 w-[66%] top-3 -translate-y-1/2 h-0.5 bg-primary z-0"></div>
+<!-- Step 1: Done -->
+<div class="flex flex-col items-center relative z-10">
+<div class="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-xs ring-4 ring-white shadow-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="check">check</span>
+</div>
+<span class="text-[10px] font-medium text-on-surface mt-1.5 text-center leading-tight">Payment<br/>Authorized</span>
+</div>
+<!-- Step 2: Done -->
+<div class="flex flex-col items-center relative z-10">
+<div class="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-xs ring-4 ring-white shadow-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="check">check</span>
+</div>
+<span class="text-[10px] font-medium text-on-surface mt-1.5 text-center leading-tight">Transfer<br/>Requested</span>
+</div>
+<!-- Step 3: Active (Scanned at Gate) -->
+<div class="flex flex-col items-center relative z-10">
+<div class="w-6 h-6 rounded-full bg-primary-container text-white flex items-center justify-center text-xs ring-4 ring-surface-variant animate-pulse shadow-md">
+<span class="w-2 h-2 rounded-full bg-white"></span>
+</div>
+<span class="text-[10px] font-bold text-primary mt-1.5 text-center leading-tight">Scanned<br/>at Gate</span>
+</div>
+<!-- Step 4: Pending -->
+<div class="flex flex-col items-center relative z-10">
+<div class="w-6 h-6 rounded-full bg-surface-container border border-outline-variant text-outline flex items-center justify-center text-xs ring-4 ring-white">
+<span class="material-symbols-outlined text-[13px]" data-icon="lock_clock">lock_clock</span>
+</div>
+<span class="text-[10px] font-medium text-outline mt-1.5 text-center leading-tight">Funds<br/>Released</span>
+</div>
+</div>
+</div>
+<!-- Trust Guarantee Callout Note -->
+<div class="flex items-start gap-2 bg-surface-container-low/70 p-2.5 rounded-lg border border-outline-variant/30 text-caption font-caption text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[16px] flex-shrink-0 mt-0.5" data-icon="info" style="font-variation-settings: 'FILL' 1;">info</span>
+<span>Funds held in trust until tickets pass barcode validation at Gate B.</span>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-2 pt-1">
+<button class="w-full h-12 rounded-xl bg-primary-container text-white font-body-sm-medium text-body-sm-medium font-semibold flex items-center justify-center gap-2 hover:bg-primary transition-all active:scale-[0.98] shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="qr_code_2">qr_code_2</span>
+              View Live QR &amp; Gate Ticket
+            </button>
+<div class="flex justify-center">
+<button class="text-caption font-caption font-medium text-outline hover:text-error transition-colors flex items-center gap-1 py-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="flag">flag</span>
+                Report Issue / Dispute
+              </button>
+</div>
+</div>
+</article>
+<!-- CARD 2: Active Carpool Handover -->
+<article class="bg-surface-container-lowest rounded-[18px] border border-outline-variant/40 custom-shadow-card p-4 flex flex-col gap-3.5 transition-all">
+<!-- Top Row Badges -->
+<div class="flex items-center justify-between gap-2 flex-wrap">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 bg-surface-container-high px-2.5 py-0.5 rounded-full text-caption font-caption font-medium text-on-surface">
+<span class="material-symbols-outlined text-[14px]" data-icon="directions_car">directions_car</span>
+                Verified Carpool
+              </span>
+<span class="inline-flex items-center gap-1 bg-secondary-fixed/40 text-on-secondary-container px-2.5 py-0.5 rounded-full text-caption font-caption font-medium">
+<span class="material-symbols-outlined text-[13px]" data-icon="handshake" style="font-variation-settings: 'FILL' 1;">handshake</span>
+                Safe Handshake
+              </span>
+</div>
+<!-- Status Pill -->
+<span class="inline-flex items-center gap-1 bg-secondary-fixed/50 text-on-secondary-container px-2.5 py-1 rounded-full text-label-mono font-label-mono tracking-wider">
+<span class="material-symbols-outlined text-[13px]" data-icon="schedule">schedule</span>
+              PICKUP SCHEDULED • 4:15 PM
+            </span>
+</div>
+<!-- Transaction Summary -->
+<div>
+<h2 class="text-title-base font-title-base text-on-surface leading-tight">Brooklyn to JFK Terminal 4 • Carpool (1 Seat)</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline" data-icon="near_me">near_me</span>
+              Today, 4:15 PM • Pickup: Grand St &amp; Bedford Ave
+            </p>
+</div>
+<!-- Counterpart Profile Module -->
+<div class="bg-surface-container-low rounded-xl p-3 border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container font-bold flex items-center justify-center text-sm ring-2 ring-white">
+                DK
+              </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-body-sm-medium font-body-sm-medium font-semibold text-on-surface">David K.</span>
+<span class="text-caption font-caption text-outline">Tesla Model 3 (White)</span>
+</div>
+<p class="text-caption font-caption text-on-surface-variant flex items-center gap-1">
+<span class="text-tertiary-container font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                    4.9
+                  </span>
+<span class="text-outline">•</span>
+<span class="text-secondary font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]" data-icon="badge">badge</span>
+                    ID Verified
+                  </span>
+</p>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-label-mono font-label-mono bg-surface px-2 py-1 rounded-md border border-outline-variant/40 text-on-surface font-semibold">
+                OTP: 8492
+              </span>
+</div>
+</div>
+<!-- Stepper Track -->
+<div class="py-1">
+<div class="relative flex items-center justify-between">
+<div class="absolute left-3 right-3 top-3 -translate-y-1/2 h-0.5 bg-outline-variant/40 z-0"></div>
+<div class="absolute left-3 w-[33%] top-3 -translate-y-1/2 h-0.5 bg-secondary z-0"></div>
+<!-- Step 1 -->
+<div class="flex flex-col items-center relative z-10">
+<div class="w-6 h-6 rounded-full bg-secondary text-white flex items-center justify-center text-xs ring-4 ring-white shadow-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="check">check</span>
+</div>
+<span class="text-[10px] font-medium text-on-surface mt-1 text-center">Confirmed</span>
+</div>
+<!-- Step 2 (Active) -->
+<div class="flex flex-col items-center relative z-10">
+<div class="w-6 h-6 rounded-full bg-primary-container text-white flex items-center justify-center text-xs ring-4 ring-surface-variant shadow-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="directions_car">directions_car</span>
+</div>
+<span class="text-[10px] font-bold text-primary mt-1 text-center">ETA 12 mins</span>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center relative z-10">
+<div class="w-6 h-6 rounded-full bg-surface-container border border-outline-variant text-outline flex items-center justify-center text-xs ring-4 ring-white">
+<span class="material-symbols-outlined text-[13px]" data-icon="pin">pin</span>
+</div>
+<span class="text-[10px] font-medium text-outline mt-1 text-center">Handshake</span>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center relative z-10">
+<div class="w-6 h-6 rounded-full bg-surface-container border border-outline-variant text-outline flex items-center justify-center text-xs ring-4 ring-white">
+<span class="material-symbols-outlined text-[13px]" data-icon="flag">flag</span>
+</div>
+<span class="text-[10px] font-medium text-outline mt-1 text-center">Drop-off</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons Row -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="h-11 rounded-xl bg-primary-container text-white font-body-sm-medium text-body-sm-medium font-semibold flex items-center justify-center gap-1.5 hover:bg-primary transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined text-[16px]" data-icon="share_location">share_location</span>
+              Track / SOS
+            </button>
+<button class="h-11 rounded-xl bg-white border border-outline-variant/60 text-on-surface font-body-sm-medium text-body-sm-medium font-semibold flex items-center justify-center gap-1.5 hover:bg-surface-container transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="call">call</span>
+              Call Driver
+            </button>
+</div>
+</article>
+<!-- CARD 3: Emergency Blood Aid Response -->
+<article class="bg-surface-container-lowest rounded-[18px] border border-outline-variant/40 custom-shadow-card p-4 flex flex-col gap-3.5 transition-all">
+<!-- Top Row Badges -->
+<div class="flex items-center justify-between gap-2 flex-wrap">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 bg-error-container text-on-error-container px-2.5 py-0.5 rounded-full text-caption font-caption font-semibold">
+<span class="material-symbols-outlined text-[14px]" data-icon="bloodtype" style="font-variation-settings: 'FILL' 1;">bloodtype</span>
+                Emergency Mutual Aid
+              </span>
+<span class="inline-flex items-center gap-1 bg-tertiary-fixed text-tertiary px-2 py-0.5 rounded-full text-caption font-caption font-semibold">
+                Priority Urgent
+              </span>
+</div>
+<!-- Status Pill -->
+<span class="inline-flex items-center gap-1 bg-tertiary-fixed/60 text-tertiary px-2.5 py-1 rounded-full text-label-mono font-label-mono tracking-wider">
+<span class="material-symbols-outlined text-[13px]" data-icon="check_circle">check_circle</span>
+              DONOR RESPONSE CONFIRMED
+            </span>
+</div>
+<!-- Transaction Summary -->
+<div>
+<div class="flex items-center justify-between">
+<h2 class="text-title-base font-title-base text-on-surface leading-tight">Emergency Blood Aid (O-)</h2>
+<span class="text-label-mono font-label-mono bg-error-container text-error px-2 py-0.5 rounded text-xs font-bold">1 Unit</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline" data-icon="local_hospital">local_hospital</span>
+              City Memorial Hospital • Blood Bank Counter B
+            </p>
+</div>
+<!-- Emergency Alert Box -->
+<div class="bg-surface-container-high/60 border-l-4 border-tertiary-container rounded-r-xl p-3 flex flex-col gap-1">
+<div class="flex items-center gap-1 text-tertiary-container font-semibold text-caption font-caption">
+<span class="material-symbols-outlined text-[16px]" data-icon="notification_important">notification_important</span>
+              Arrival Coordination Active
+            </div>
+<p class="text-caption font-caption text-on-surface-variant">
+              Hospital Attender awaiting arrival at Blood Bank counter B. Emergency ID: <strong class="text-on-surface">#AID-9921</strong>.
+            </p>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-1 gap-2 pt-1">
+<button class="w-full h-11 rounded-xl bg-primary-container text-white font-body-sm-medium text-body-sm-medium font-semibold flex items-center justify-center gap-2 hover:bg-primary transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]" data-icon="navigation">navigation</span>
+              Hospital Directions &amp; Contact
+            </button>
+<button class="w-full h-11 rounded-xl bg-white border border-outline-variant/60 text-secondary font-body-sm-medium text-body-sm-medium font-semibold flex items-center justify-center gap-1.5 hover:bg-surface-container transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]" data-icon="task_alt">task_alt</span>
+              Check In as Arrived
+            </button>
+</div>
+</article>
+</div>
+<!-- Trust Assurance Mini Card -->
+<div class="rounded-xl border border-dashed border-outline-variant/80 p-3.5 bg-surface-container-low flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<p class="text-caption font-caption text-on-surface-variant leading-relaxed">
+          All exchanges on SubShare are insured up to $1,000 under the Neighborhood Mutual Guarantee.
+        </p>
+</div>
+</main>
+<!-- Footer Component (Shared Spec) -->
+<footer class="w-full py-space-md border-t border-outline-variant/30 flex flex-col items-center justify-center text-center px-margin-screen max-w-lg mx-auto mt-6">
+<div class="flex items-center justify-center gap-4 mb-2">
+<a class="text-caption font-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<span class="text-outline-variant text-xs">•</span>
+<a class="text-caption font-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<span class="text-outline-variant text-xs">•</span>
+<a class="text-caption font-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Trust Guarantee</a>
+</div>
+<p class="text-caption font-caption text-on-surface-variant">
+        © 2024 SubShare. Protected by Mutual Trust Network &amp; 256-Bit Encryption.
+      </p>
+</footer>
+<!-- Fixed Bottom Navigation Bar (Semantic Shell - Destination Screen) -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-lg custom-shadow-nav">
+<div class="max-w-lg mx-auto h-16 px-4 flex items-center justify-around">
+<!-- Tab 1: Home (Inactive) -->
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors py-1 px-2" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="home">home</span>
+<span class="text-[11px] font-medium leading-none">Home</span>
+</a>
+<!-- Tab 2: Explore (Inactive) -->
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors py-1 px-2" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="explore">explore</span>
+<span class="text-[11px] font-medium leading-none">Explore</span>
+</a>
+<!-- Tab 3: Activity (ACTIVE - Highlighted) -->
+<a class="flex flex-col items-center justify-center gap-1 text-primary relative py-1 px-3" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="receipt_long" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="text-[11px] font-bold leading-none">Activity</span>
+<!-- Active Dot Accent -->
+<span class="w-1.5 h-1.5 rounded-full bg-primary absolute -bottom-1"></span>
+</a>
+<!-- Tab 4: Messages (Inactive with Badge '1') -->
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors py-1 px-2 relative" href="#">
+<div class="relative">
+<span class="material-symbols-outlined text-[22px]" data-icon="chat">chat</span>
+<span class="absolute -top-1 -right-1.5 w-4 h-4 rounded-full bg-primary-container text-white text-[10px] font-bold flex items-center justify-center border-2 border-surface">
+              1
+            </span>
+</div>
+<span class="text-[11px] font-medium leading-none">Messages</span>
+</a>
+<!-- Tab 5: Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors py-1 px-2" href="#">
+<div class="w-5 h-5 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center text-[10px] font-semibold text-primary">
+            AW
+          </div>
+<span class="text-[11px] font-medium leading-none">Profile</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

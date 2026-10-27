@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SubShare - Listing Details</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-primary-container": "#eeefff",
+          "secondary-fixed-dim": "#62df7d",
+          "secondary": "#006e2d",
+          "on-secondary-fixed": "#002109",
+          "inverse-primary": "#b4c5ff",
+          "on-secondary-fixed-variant": "#005320",
+          "surface": "#f9f9ff",
+          "on-tertiary-fixed": "#2f1500",
+          "on-background": "#121b2e",
+          "on-primary": "#ffffff",
+          "surface-container-highest": "#d9e2fc",
+          "surface-container-high": "#e1e8ff",
+          "tertiary-fixed": "#ffdcc3",
+          "secondary-container": "#7cf994",
+          "tertiary": "#824500",
+          "error-container": "#ffdad6",
+          "secondary-fixed": "#7ffc97",
+          "surface-dim": "#d1daf4",
+          "outline-variant": "#c3c6d7",
+          "on-secondary": "#ffffff",
+          "error": "#ba1a1a",
+          "on-error-container": "#93000a",
+          "surface-variant": "#d9e2fc",
+          "primary-fixed": "#dbe1ff",
+          "on-primary-fixed-variant": "#003ea8",
+          "on-tertiary": "#ffffff",
+          "on-surface-variant": "#434655",
+          "on-surface": "#121b2e",
+          "surface-container-lowest": "#ffffff",
+          "on-error": "#ffffff",
+          "tertiary-fixed-dim": "#ffb77d",
+          "tertiary-container": "#a65900",
+          "surface-tint": "#0053db",
+          "surface-container": "#e9edff",
+          "on-secondary-container": "#007230",
+          "primary-container": "#2563eb",
+          "background": "#f9f9ff",
+          "outline": "#737686",
+          "primary-fixed-dim": "#b4c5ff",
+          "on-tertiary-fixed-variant": "#6e3900",
+          "surface-container-low": "#f1f3ff",
+          "primary": "#004ac6",
+          "surface-bright": "#f9f9ff",
+          "on-primary-fixed": "#00174b",
+          "inverse-on-surface": "#edf0ff",
+          "inverse-surface": "#273044",
+          "on-tertiary-container": "#ffede1"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xxs": "0.25rem",
+          "gutter-grid": "0.75rem",
+          "space-xl": "1.5rem",
+          "space-lg": "1.25rem",
+          "space-sm": "0.75rem",
+          "space-md": "1rem",
+          "space-2xl": "2rem",
+          "space-4xl": "3rem",
+          "margin-screen": "1rem",
+          "space-xs": "0.5rem",
+          "space-3xl": "2.5rem"
+        },
+        "fontFamily": {
+          "caption": ["Inter"],
+          "headline-h3": ["Inter"],
+          "headline-h2": ["Inter"],
+          "label-mono": ["Inter"],
+          "title-base": ["Inter"],
+          "body-sm": ["Inter"],
+          "body-base": ["Inter"],
+          "body-sm-medium": ["Inter"],
+          "headline-h1": ["Inter"],
+          "display-hero": ["Inter"],
+          "body-base-medium": ["Inter"]
+        },
+        "fontSize": {
+          "caption": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+          "headline-h3": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+          "headline-h2": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+          "label-mono": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+          "title-base": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+          "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+          "body-base": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+          "body-sm-medium": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500" }],
+          "headline-h1": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+          "display-hero": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+          "body-base-medium": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "500" }]
+        }
+      }
+    }
+  }
+  </script>
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background-color: #F6F8FB;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .card-shadow {
+      box-shadow: 0px 1px 2px rgba(23, 32, 51, 0.04), 0px 4px 12px rgba(23, 32, 51, 0.03);
+    }
+    .floating-bar-shadow {
+      box-shadow: 0px -4px 16px rgba(23, 32, 51, 0.06);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#F6F8FB] text-[#172033] antialiased flex justify-center min-h-screen">
+<!-- Mobile Screen Shell (390px responsive container) -->
+<div class="w-full max-w-[420px] bg-[#F6F8FB] flex flex-col min-h-screen relative pb-32">
+<!-- Top App Bar (Shared Brand Top Component adapted for Task sub-page) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md px-margin-screen h-14 flex items-center justify-between border-b border-outline-variant/30">
+<div class="flex items-center gap-space-xs">
+<button aria-label="Go Back" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<span class="font-title-base text-title-base font-bold text-on-surface ml-1">Ticket Details</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Share Ticket" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[19px]" data-icon="share">share</span>
+</button>
+<button aria-label="Save Listing" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="bookmark">bookmark</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin-screen pt-space-md space-y-space-lg">
+<!-- Hero Visual Event Banner Stub -->
+<section class="relative w-full rounded-[18px] overflow-hidden border border-[#E5E7EB] bg-surface-container-lowest card-shadow">
+<div class="relative h-44 w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A spectacular live stadium concert view with massive vibrant magenta and cobalt blue laser lights beaming above an excited crowd holding illuminated wristbands under a dusk twilight sky. The atmosphere feels electric, pristine, safe, and technologically breathtaking." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcRt6sbGgko7uvMXTZjddC_y1ig9EVsrOXTP6aipaiYzNXQ7uDXOYwmzKPdr3o1nSSWOXQm4nk6dwQzBQ6sR2ii1VWY3MOyxKzcqadDVOaojTyIsNWwj33ajVG8WxtKqd3Ck3YrdqioCaIi839iCcSt_4E61wDNMxDnDiRTN8VDTXXu42NiTkghvIrcl6preOK-vwcx5hi-LOtl_C5emCStUSvh66g1g7peyauhwkvYjITVlEWPgXYiaNtm6pfNQD-Y3utW3QMkYH1"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121B2E]/90 via-[#121B2E]/30 to-transparent"></div>
+<!-- Top Tag over visual -->
+<div class="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-caption text-caption shadow-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="confirmation_number">confirmation_number</span>
+<span>Live Concert Pass</span>
+</div>
+<div class="absolute top-3 right-3 px-2 py-1 rounded-full bg-[#16A34A] text-on-primary font-label-mono text-label-mono flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[12px]" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>SAFE TRANSFER</span>
+</div>
+<!-- Bottom Banner Overlay Text -->
+<div class="absolute bottom-3 left-3 right-3 text-on-primary">
+<div class="flex items-center gap-1.5 text-[#B4C5FF] font-caption text-caption mb-0.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="stadium">stadium</span>
+<span>World Tour 2024 • North American Leg</span>
+</div>
+<p class="font-title-base text-title-base font-bold truncate text-on-primary">Section Floor VIP • Fast Lane Access</p>
+</div>
+</div>
+<!-- Hero Metadata & Title Stack -->
+<div class="p-4 bg-surface-container-lowest space-y-2.5">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-caption font-caption bg-[#DCFCE7] text-[#15803D] font-medium gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              2 of 2 Passes Available
+            </span>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-caption font-caption bg-surface-container text-on-surface-variant font-medium gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="lock">lock</span>
+              Guaranteed Genuine
+            </span>
+</div>
+<h1 class="font-headline-h2 text-headline-h2 text-on-surface font-bold tracking-tight">
+            Coldplay: Music of the Spheres (2 Passes)
+          </h1>
+<div class="space-y-1 pt-0.5 border-t border-outline-variant/30 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="location_on">location_on</span>
+<span class="font-medium text-on-surface">MetLife Stadium, East Rutherford, NJ</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="schedule">schedule</span>
+<span>Tomorrow, Oct 14 • Gates 6:00 PM • Show 7:00 PM</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Owner / Seller High-Trust Verification Card -->
+<section class="bg-surface-container-lowest rounded-[18px] p-4 border border-[#E5E7EB] card-shadow space-y-3.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary font-title-base text-title-base font-bold flex items-center justify-center shadow-inner">
+                SJ
+              </div>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-[#16A34A] border-2 border-surface-container-lowest rounded-full ring-1 ring-white" title="Online now"></span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-title-base text-title-base font-bold text-on-surface">Sarah Jenkins</span>
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;" title="Verified Individual">verified</span>
+</div>
+<p class="text-caption font-caption text-secondary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="shield">shield</span>
+                Verified SubShare Resident
+              </p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#EFF6FF] border border-[#DBEAFE] text-primary font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified_user" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+              99/100
+            </div>
+<span class="text-[10px] text-outline mt-0.5 font-medium">Trust Score</span>
+</div>
+</div>
+<!-- Owner Key Statistics Matrix -->
+<div class="grid grid-cols-3 gap-2 bg-[#F6F8FB] p-2.5 rounded-xl border border-outline-variant/30 text-center">
+<div>
+<div class="font-body-sm-medium text-body-sm-medium font-bold text-on-surface">42</div>
+<div class="text-[11px] text-on-surface-variant leading-tight">Completed</div>
+</div>
+<div class="border-x border-outline-variant/40">
+<div class="font-body-sm-medium text-body-sm-medium font-bold text-on-surface flex items-center justify-center gap-0.5">
+<span>5.0</span>
+<span class="material-symbols-outlined text-[13px] text-tertiary-container" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="text-[11px] text-on-surface-variant leading-tight">38 Reviews</div>
+</div>
+<div>
+<div class="font-body-sm-medium text-body-sm-medium font-bold text-on-surface">2 Yrs</div>
+<div class="text-[11px] text-on-surface-variant leading-tight">Member</div>
+</div>
+</div>
+<!-- Proximity badge -->
+<div class="flex items-center justify-between text-caption font-caption text-on-surface-variant pt-0.5">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-primary" data-icon="near_me">near_me</span>
+<span>0.8 km away • Greenpoint, Brooklyn</span>
+</div>
+<span class="text-secondary font-medium">Avg reply: 3 min</span>
+</div>
+</section>
+<!-- Key Specifications 2-Column Grid -->
+<section class="bg-surface-container-lowest rounded-[18px] p-4 border border-[#E5E7EB] card-shadow space-y-3">
+<div class="flex items-center justify-between">
+<h2 class="font-title-base text-title-base font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="tune">tune</span>
+            Ticket Specifications
+          </h2>
+<span class="text-caption font-caption text-primary font-medium">Instant Validated</span>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Spec 1 -->
+<div class="p-3 rounded-xl bg-[#F6F8FB] border border-[#E5E7EB]">
+<span class="text-caption font-caption text-on-surface-variant block">Seating Tier</span>
+<span class="font-body-base-medium text-body-base-medium font-bold text-on-surface mt-0.5 block">Floor VIP GA</span>
+<span class="text-[11px] text-outline block mt-0.5">Unreserved Standing</span>
+</div>
+<!-- Spec 2 -->
+<div class="p-3 rounded-xl bg-[#F6F8FB] border border-[#E5E7EB]">
+<span class="text-caption font-caption text-on-surface-variant block">Entry Access</span>
+<span class="font-body-base-medium text-body-base-medium font-bold text-on-surface mt-0.5 block">Gate B</span>
+<span class="text-[11px] text-secondary font-medium block mt-0.5">Fast Track Lane</span>
+</div>
+<!-- Spec 3 -->
+<div class="p-3 rounded-xl bg-[#F6F8FB] border border-[#E5E7EB]">
+<span class="text-caption font-caption text-on-surface-variant block">Unit Price</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-body-base-medium text-body-base-medium font-bold text-on-surface">$120</span>
+<span class="text-caption font-caption text-outline">/ pass</span>
+</div>
+<span class="text-[11px] text-secondary font-medium block mt-0.5">Zero mark-up policy</span>
+</div>
+<!-- Spec 4 -->
+<div class="p-3 rounded-xl bg-[#F6F8FB] border border-[#E5E7EB]">
+<span class="text-caption font-caption text-on-surface-variant block">Original Retail</span>
+<div class="flex items-baseline gap-1.5 mt-0.5">
+<span class="font-body-base-medium text-body-base-medium font-bold line-through text-outline">$180</span>
+<span class="text-caption font-caption text-[#16A34A] font-semibold">33% off</span>
+</div>
+<span class="text-[11px] text-outline block mt-0.5">Face-value cap met</span>
+</div>
+<!-- Spec 5 -->
+<div class="p-3 rounded-xl bg-[#F6F8FB] border border-[#E5E7EB]">
+<span class="text-caption font-caption text-on-surface-variant block">Delivery Method</span>
+<span class="font-body-sm-medium text-body-sm-medium font-bold text-on-surface mt-0.5 block">In-App Transfer</span>
+<span class="text-[11px] text-primary font-medium block mt-0.5">Instant Wallet Pass</span>
+</div>
+<!-- Spec 6 -->
+<div class="p-3 rounded-xl bg-[#F6F8FB] border border-[#E5E7EB]">
+<span class="text-caption font-caption text-on-surface-variant block">Digital Verification</span>
+<span class="font-body-sm-medium text-body-sm-medium font-bold text-on-surface mt-0.5 block">98% AI Match</span>
+<span class="text-[11px] text-secondary font-medium block mt-0.5 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]" data-icon="qr_code_scanner">qr_code_scanner</span>
+              Live Barcode Lock
+            </span>
+</div>
+</div>
+</section>
+<!-- TrustShare Escrow Security Guarantee Card -->
+<section class="rounded-[18px] p-4 bg-[#EFF6FF] border border-[#DBEAFE] space-y-3 card-shadow">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[22px]" data-icon="gavel">gavel</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h3 class="font-title-base text-title-base font-bold text-primary">Held-in-Escrow Guarantee</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1 leading-snug">
+              Your payment of <strong class="font-semibold text-primary">$240.00</strong> is safeguarded in TrustShare Escrow. Funds are released to Sarah <span class="font-medium underline decoration-primary/40">only after</span> your passes are successfully scanned at Gate B.
+            </p>
+</div>
+</div>
+<!-- 3 Bullet Checkpoints -->
+<div class="pt-2 border-t border-[#BFDBFE] space-y-2 text-caption font-caption text-on-surface">
+<div class="flex items-center gap-2">
+<span class="w-4 h-4 rounded-full bg-[#16A34A] text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[11px]" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+<span class="font-medium">Zero-Fraud Protection &amp; Verified Barcode Checksum</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-4 h-4 rounded-full bg-[#16A34A] text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[11px]" data-icon="support_agent" data-weight="fill" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</span>
+<span class="font-medium">24/7 Gate Emergency Support via live hotline</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-4 h-4 rounded-full bg-[#16A34A] text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[11px]" data-icon="replay" data-weight="fill" style="font-variation-settings: 'FILL' 1;">replay</span>
+</span>
+<span class="font-medium">100% Instant Refund if admission is denied</span>
+</div>
+</div>
+</section>
+<!-- Neighborhood Context / Handover Notice -->
+<section class="bg-surface-container-lowest rounded-[18px] p-4 border border-[#E5E7EB] card-shadow flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="pin_drop">pin_drop</span>
+</div>
+<div>
+<h4 class="font-body-sm-medium text-body-sm-medium font-bold text-on-surface">Brooklyn Greenpoint Hub</h4>
+<p class="text-caption font-caption text-on-surface-variant">In-person handover optional at designated safe zone</p>
+</div>
+</div>
+<button class="text-caption font-caption text-primary font-semibold hover:underline" type="button">
+          View Map
+        </button>
+</section>
+</main>
+<!-- Shared Brand Footer -->
+<footer class="w-full py-space-md border-t border-outline-variant/30 bg-surface-bright text-center px-margin-screen mt-6">
+<div class="flex items-center justify-center gap-2 mb-2 text-caption font-caption text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#privacy">Privacy Policy</a>
+<span>•</span>
+<a class="hover:text-primary transition-colors" href="#terms">Terms of Service</a>
+<span>•</span>
+<a class="text-primary underline font-medium" href="#guarantee">Trust Guarantee</a>
+</div>
+<p class="text-caption font-caption text-on-surface-variant max-w-xs mx-auto">
+        © 2024 SubShare. Protected by Mutual Trust Network &amp; 256-Bit Encryption.
+      </p>
+</footer>
+<!-- Sticky Bottom Action Bar (Thumb-Zone Level 3 Floating Sheet) -->
+<aside aria-label="Purchase and Actions" class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[420px] bg-surface-container-lowest border-t border-[#E5E7EB] px-4 py-3 z-50 floating-bar-shadow">
+<div class="flex items-center justify-between gap-3">
+<!-- Price Block -->
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-h3 text-headline-h3 font-bold text-on-surface">$240.00</span>
+<span class="text-caption font-caption text-outline">total</span>
+</div>
+<span class="text-[11px] text-secondary font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]" data-icon="verified_user">verified_user</span>
+            2 Passes • Free Escrow
+          </span>
+</div>
+<!-- Action CTAs -->
+<div class="flex items-center gap-2">
+<!-- Chat Button -->
+<button aria-label="Message Seller" class="w-12 h-12 rounded-xl border border-[#E5E7EB] bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="chat">chat</span>
+</button>
+<!-- Primary CTA Button -->
+<button class="h-[50px] px-4 bg-primary-container text-on-primary rounded-xl font-body-base-medium text-body-base-medium font-semibold hover:bg-primary active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-sm" type="button">
+<span>Request &amp; Authorize</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</aside>
+</div>
+</body></html>

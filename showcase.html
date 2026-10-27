@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SubShare - Mobile App Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563EB;
+      --primary-dark: #1D4ED8;
+      --bg: #0F172A;
+      --surface: #1E293B;
+      --surface-card: #334155;
+      --text: #F8FAFC;
+      --text-muted: #94A3B8;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      padding: 1.25rem 2rem;
+      background-color: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+    }
+    .logo-cluster { display: flex; align-items: center; gap: 0.75rem; }
+    .shield-badge {
+      background: linear-gradient(135deg, #2563EB, #60A5FA);
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+    .brand-title { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; }
+    .tagline { font-size: 0.8rem; color: var(--text-muted); }
+    .stats-pill {
+      background-color: #1E293B;
+      border: 1px solid #3B82F6;
+      color: #93C5FD;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .main-container {
+      display: flex;
+      flex: 1;
+      height: calc(100vh - 73px);
+      overflow: hidden;
+    }
+    .sidebar {
+      width: 340px;
+      background-color: var(--surface);
+      border-right: 1px solid var(--border);
+      overflow-y: auto;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .screen-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      background-color: transparent;
+      color: var(--text);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+    .screen-item:hover {
+      background-color: var(--surface-card);
+    }
+    .screen-item.active {
+      background-color: rgba(37, 99, 235, 0.15);
+      border-color: var(--primary);
+      color: #93C5FD;
+    }
+    .screen-number {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background-color: #0F172A;
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .screen-item.active .screen-number {
+      background-color: var(--primary);
+      color: white;
+    }
+    .screen-info { flex: 1; min-width: 0; }
+    .screen-name { font-size: 0.875rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .screen-meta { font-size: 0.725rem; color: var(--text-muted); }
+    .preview-area {
+      flex: 1;
+      background-color: #0B1120;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      position: relative;
+    }
+    .phone-frame {
+      width: 390px;
+      height: 844px;
+      max-height: 90vh;
+      background-color: #000;
+      border-radius: 48px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 0 10px #1E293B, 0 0 0 12px #334155;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .phone-notch {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 28px;
+      background-color: #000;
+      border-radius: 20px;
+      z-index: 100;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: #F6F8FB;
+    }
+    .top-actions {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      display: flex;
+      gap: 0.75rem;
+    }
+    .action-btn {
+      background-color: #1E293B;
+      color: #F8FAFC;
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: background-color 0.15s;
+    }
+    .action-btn:hover { background-color: var(--surface-card); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-cluster">
+      <div class="shield-badge">🛡️</div>
+      <div>
+        <div class="brand-title">SubShare <span style="font-size: 0.8rem; color: #60A5FA; font-weight: 500;">(TrustShare)</span></div>
+        <div class="tagline">10 Screens Generated via Google Stitch Loop</div>
+      </div>
+    </div>
+    <div class="stats-pill">
+      <span>●</span> Stitch Project ID: 14619210777894459015
+    </div>
+  </header>
+
+  <div class="main-container">
+    <div class="sidebar">
+      <div style="font-size: 0.75rem; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.25rem 0.5rem;">Core Screen Flow</div>
+      
+      <button class="screen-item active" onclick="loadScreen('.stitch/designs/splash-welcome.html', this)">
+        <div class="screen-number">1</div>
+        <div class="screen-info">
+          <div class="screen-name">Splash & Welcome</div>
+          <div class="screen-meta">Brand identity & Auth CTAs</div>
+        </div>
+      </button>
+
+      <button class="screen-item" onclick="loadScreen('.stitch/designs/auth-flow.html', this)">
+        <div class="screen-number">2</div>
+        <div class="screen-info">
+          <div class="screen-name">Authentication & OTP</div>
+          <div class="screen-meta">6-Digit Phone Verification</div>
+        </div>
+      </button>
+
+      <button class="screen-item" onclick="loadScreen('.stitch/designs/profile-setup.html', this)">
+        <div class="screen-number">3</div>
+        <div class="screen-info">
+          <div class="screen-name">Mandatory Profile Setup</div>
+          <div class="screen-meta">Individual vs Org Selection</div>
+        </div>
+      </button>
+
+      <button class="screen-item" onclick="loadScreen('.stitch/designs/home-dashboard.html', this)">
+        <div class="screen-number">4</div>
+        <div class="screen-info">
+          <div class="screen-name">Home Dashboard</div>
+          <div class="screen-meta">AI Search & 5 Core Hubs</div>
+        </div>
+      </button>
+
+      <button class="screen-item" onclick="loadScreen('.stitch/designs/service-listings.html', this)">
+        <div class="screen-number">5</div>
+        <div class="screen-info">
+          <div class="screen-name">Service Listing Feed</div>
+          <div class="screen-meta">Multi-Service Marketplace</div>
+        </div>
+      </button>
+
+      <button class="screen-item" onclick="loadScreen('.stitch/designs/listing-detail.html', this)">
+        <div class="screen-number">6</div>
+        <div class="screen-info">
+          <div class="screen-name">Listing Detail & Escrow</div>
+          <div class="screen-meta">Verified Ticket Handover</div>
+        </div>
+      </button>
+
+      <button class="screen-item" onclick="loadScreen('.stitch/designs/activity-status.html', this)">
+        <div class="screen-number">7</div>
+        <div class="screen-info">
+          <div class="screen-name">Activity & Transactions</div>
+          <div class="screen-meta">State Machine & Stepper</div>
+        </div>
+      </button>
+
+      <button class="screen-item" onclick="loadScreen('.stitch/designs/private-chat.html', this)">
+        <div class="screen-number">8</div>
+        <div class="screen-info">
+          <div class="screen-name">Private Encrypted Chat</div>
+          <div class="screen-meta">In-Chat Barcode & Escrow</div>
+        </div>
+      </button>
+
+      <button class="screen-item" onclick="loadScreen('.stitch/designs/profile-trust.html', this)">
+        <div class="screen-number">9</div>
+        <div class="screen-info">
+          <div class="screen-name">Profile & Trust Center</div>
+          <div class="screen-meta">98/100 Trust Score Gauge</div>
+        </div>
+      </button>
+
+      <button class="screen-item" onclick="loadScreen('.stitch/designs/admin-dashboard.html', this)">
+        <div class="screen-number">10</div>
+        <div class="screen-info">
+          <div class="screen-name">Admin Console</div>
+          <div class="screen-meta">Org Verification & Fraud Watch</div>
+        </div>
+      </button>
+    </div>
+
+    <div class="preview-area">
+      <div class="top-actions">
+        <a id="open-tab-btn" href=".stitch/designs/splash-welcome.html" target="_blank" class="action-btn">
+          <span>↗</span> Open Screen in Full Tab
+        </a>
+      </div>
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <iframe id="screen-frame" src=".stitch/designs/splash-welcome.html"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function loadScreen(url, element) {
+      document.getElementById('screen-frame').src = url;
+      document.getElementById('open-tab-btn').href = url;
+      document.querySelectorAll('.screen-item').forEach(el => el.classList.remove('active'));
+      if (element) {
+        element.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>

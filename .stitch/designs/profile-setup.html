@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Complete Your Profile - SubShare</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-container": "#007230",
+            "on-surface-variant": "#434655",
+            "on-background": "#121b2e",
+            "inverse-surface": "#273044",
+            "tertiary-fixed": "#ffdcc3",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "secondary-fixed": "#7ffc97",
+            "on-tertiary": "#ffffff",
+            "inverse-on-surface": "#edf0ff",
+            "surface-container-high": "#e1e8ff",
+            "secondary-fixed-dim": "#62df7d",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "on-tertiary-fixed": "#2f1500",
+            "tertiary-container": "#a65900",
+            "on-secondary": "#ffffff",
+            "tertiary": "#824500",
+            "on-primary-container": "#eeefff",
+            "surface": "#f9f9ff",
+            "surface-container-highest": "#d9e2fc",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f1f3ff",
+            "primary-container": "#2563eb",
+            "on-tertiary-container": "#ffede1",
+            "on-secondary-fixed": "#002109",
+            "background": "#f9f9ff",
+            "primary-fixed-dim": "#b4c5ff",
+            "on-secondary-fixed-variant": "#005320",
+            "surface-tint": "#0053db",
+            "secondary": "#006e2d",
+            "surface-bright": "#f9f9ff",
+            "on-primary": "#ffffff",
+            "tertiary-fixed-dim": "#ffb77d",
+            "error-container": "#ffdad6",
+            "outline-variant": "#c3c6d7",
+            "primary-fixed": "#dbe1ff",
+            "on-error-container": "#93000a",
+            "inverse-primary": "#b4c5ff",
+            "surface-variant": "#d9e2fc",
+            "on-primary-fixed": "#00174b",
+            "primary": "#004ac6",
+            "outline": "#737686",
+            "surface-container": "#e9edff",
+            "surface-dim": "#d1daf4",
+            "secondary-container": "#7cf994",
+            "on-primary-fixed-variant": "#003ea8",
+            "on-surface": "#121b2e"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "card": "1.125rem", /* 18px */
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "1.5rem",
+            "space-lg": "1.25rem",
+            "space-xxs": "0.25rem",
+            "space-3xl": "2.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.5rem",
+            "space-2xl": "2rem",
+            "margin-screen": "1rem",
+            "gutter-grid": "0.75rem",
+            "space-4xl": "3rem",
+            "space-sm": "0.75rem"
+          },
+          "fontFamily": {
+            "label-mono": ["Inter"],
+            "body-base-medium": ["Inter"],
+            "body-sm-medium": ["Inter"],
+            "body-sm": ["Inter"],
+            "display-hero": ["Inter"],
+            "caption": ["Inter"],
+            "headline-h2": ["Inter"],
+            "headline-h3": ["Inter"],
+            "title-base": ["Inter"],
+            "body-base": ["Inter"],
+            "headline-h1": ["Inter"]
+          },
+          "fontSize": {
+            "label-mono": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-base-medium": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "body-sm-medium": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-hero": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "caption": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "headline-h2": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-h3": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "title-base": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-base": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-h1": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      background-color: #F6F8FB;
+      font-family: 'Inter', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-card-shadow {
+      box-shadow: 0px 1px 2px rgba(23, 32, 51, 0.04), 0px 4px 12px rgba(23, 32, 51, 0.03);
+    }
+    .custom-float-shadow {
+      box-shadow: 0px -4px 20px rgba(23, 32, 51, 0.06);
+    }
+  </style>
+</head>
+<body class="text-on-surface bg-[#F6F8FB] antialiased min-h-screen flex flex-col justify-between selection:bg-primary-container selection:text-on-primary">
+<!-- Mobile Viewport Container (Max 480px) -->
+<div class="w-full max-w-md mx-auto min-h-screen flex flex-col bg-[#F6F8FB] relative pb-28">
+<!-- Top Navigation Anchor (Per JSON style instructions: border-b border-outline-variant/30) -->
+<header class="sticky top-0 z-30 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-margin-screen h-14 max-w-lg mx-auto">
+<!-- Back action -->
+<button aria-label="Go Back" class="w-10 h-10 flex items-center justify-center rounded-xl text-on-surface hover:bg-surface-container active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<!-- Brand Identity & Logo -->
+<div class="flex items-center gap-space-xs">
+<img alt="SubShare Trust Emblem" class="w-7 h-7 object-contain rounded-md" src="https://lh3.googleusercontent.com/aida/AEtjO1X_QSPZxPlZyiEdo4y5QFTFwt7qOUvcRzsMabqfgJMsfq9FeTyvNOokeeg7DGZ2jNW_ng0MJL0E28PWGSaq7ady88TwdorAwJHdcUQjO9ODhBkX8caAnB8ASFANjqLUN5VYPmp_SXpi9cCJMbUyAZyYxElrvdvccyri6F_4TYNss42vLl55Z3SYXBz-mOBBRm77krQ-m2nDOn9zBuZnnUmLVxpuuMWBSDPcmP1en9DkTSUxLbVCL8TxF3s"/>
+<span class="text-title-base font-title-base font-bold text-primary tracking-tight">SubShare</span>
+</div>
+<!-- Trailing Action -->
+<div class="flex items-center gap-2">
+<button class="text-body-sm-medium font-body-sm-medium text-primary hover:text-primary-container transition-colors py-1.5 px-2 rounded-lg hover:bg-surface-container" type="button">
+            Help
+          </button>
+</div>
+</div>
+<!-- Linear Step Progress Indicator Bar -->
+<div class="w-full px-margin-screen pt-1 pb-3">
+<div class="flex items-center justify-between mb-1.5">
+<span class="text-label-mono font-label-mono text-primary font-semibold uppercase tracking-wider">Step 2 of 3</span>
+<span class="text-caption font-caption text-outline">Identity &amp; Account Type</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full w-2/3 rounded-full transition-all duration-300"></div>
+</div>
+</div>
+</header>
+<!-- Main Form & Content Stream -->
+<main class="flex-1 px-margin-screen pt-4 space-y-5">
+<!-- Page Header Context -->
+<section class="space-y-1">
+<h1 class="text-headline-h2 font-headline-h2 text-on-surface tracking-tight">Complete Your Profile</h1>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+          Personalize your SubShare experience to unlock verified neighbor exchanges and mutual support.
+        </p>
+</section>
+<!-- Section: Account Type Selection -->
+<section class="space-y-2.5">
+<div class="flex items-baseline justify-between">
+<h2 class="text-body-base-medium font-body-base-medium text-on-surface">How will you participate?</h2>
+<span class="text-caption font-caption text-outline">Required</span>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<!-- Card 1 (Selected): Individual Member -->
+<div class="relative bg-surface-container-lowest border-2 border-primary-container rounded-[18px] p-4 custom-card-shadow transition-all duration-200 cursor-pointer bg-gradient-to-br from-surface-container-lowest to-[#eff4ff]">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-body-base-medium font-body-base-medium text-on-surface font-semibold">Individual Member</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#DCFCE7] text-[#16A34A]">
+                      Selected
+                    </span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-snug">
+                    Share tickets, rides, join subscription groups, and respond to community emergencies.
+                  </p>
+</div>
+</div>
+<!-- Radio Indicator Checked -->
+<div class="w-5 h-5 rounded-full border-2 border-primary-container flex items-center justify-center bg-primary-container shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-white text-[16px]" data-icon="check">check</span>
+</div>
+</div>
+</div>
+<!-- Card 2 (Unselected): Verified Organization -->
+<div class="relative bg-surface-container-lowest border border-[#E5E7EB] hover:border-outline-variant rounded-[18px] p-4 custom-card-shadow transition-all duration-200 cursor-pointer group">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container text-on-surface-variant group-hover:text-primary flex items-center justify-center shrink-0 mt-0.5 transition-colors">
+<span class="material-symbols-outlined text-[24px]" data-icon="apartment">apartment</span>
+</div>
+<div class="space-y-1">
+<span class="text-body-base-medium font-body-base-medium text-on-surface font-medium group-hover:text-primary transition-colors">Verified Organization</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-snug">
+                    NGOs, food rescue charities, orphanages &amp; community shelters.
+                  </p>
+</div>
+</div>
+<!-- Radio Indicator Unchecked -->
+<div class="w-5 h-5 rounded-full border-[1.5px] border-outline-variant shrink-0 mt-0.5 group-hover:border-outline"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Profile Information Card -->
+<section class="bg-surface-container-lowest border border-[#E5E7EB] rounded-[18px] p-4 sm:p-5 custom-card-shadow space-y-4">
+<!-- Avatar Upload Row -->
+<div class="flex items-center gap-4 pb-4 border-b border-surface-container">
+<div class="relative">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-headline-h3 font-bold border-2 border-white shadow-sm overflow-hidden">
+<span>AW</span>
+</div>
+<button aria-label="Take Photo" class="absolute -bottom-1 -right-1 w-7 h-7 bg-primary-container text-white rounded-full flex items-center justify-center shadow-md hover:bg-primary transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[15px]" data-icon="photo_camera" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+</button>
+</div>
+<div class="space-y-1">
+<button class="text-body-sm-medium font-body-sm-medium text-primary hover:underline flex items-center gap-1" type="button">
+<span>Upload Photo</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="file_upload">file_upload</span>
+</button>
+<p class="text-caption font-caption text-outline">JPG, PNG up to 5MB</p>
+</div>
+</div>
+<!-- Input: Full Name -->
+<div class="space-y-1.5">
+<label class="text-caption font-caption text-on-surface-variant font-medium flex items-center justify-between">
+<span>Full Legal Name</span>
+<span class="text-[#16A34A] text-[11px] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+              Identity Match
+            </span>
+</label>
+<div class="relative">
+<input class="w-full h-[50px] px-3.5 pr-10 rounded-xl bg-white border border-[#E5E7EB] text-body-base font-body-base text-on-surface focus:outline-none focus:border-primary-container focus:ring-4 focus:ring-primary-container/10 transition-all" type="text" value="Alexander Wright"/>
+<div class="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#16A34A] flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-[20px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Location Row -->
+<div class="space-y-1.5">
+<label class="text-caption font-caption text-on-surface-variant font-medium">Location &amp; Neighborhood</label>
+<div class="p-3 rounded-xl bg-[#F6F8FB] border border-[#E5E7EB] flex items-center justify-between gap-2">
+<div class="flex items-center gap-2.5 overflow-hidden">
+<div class="w-8 h-8 rounded-lg bg-primary-container/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="truncate">
+<p class="text-body-sm-medium font-body-sm-medium text-on-surface truncate">Brooklyn, NY</p>
+<p class="text-[11px] text-outline truncate">Current Location via GPS</p>
+</div>
+</div>
+<button class="shrink-0 px-2.5 py-1.5 rounded-lg border border-[#E5E7EB] bg-white text-caption font-caption text-on-surface hover:bg-surface-container transition-colors active:scale-95" type="button">
+              Choose manually
+            </button>
+</div>
+</div>
+<!-- Community Volunteer Preferences (Optional) -->
+<div class="space-y-2 pt-1">
+<div class="flex items-center justify-between">
+<label class="text-caption font-caption text-on-surface-variant font-medium">Community Volunteer Interests</label>
+<span class="text-[11px] text-outline">Optional</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<!-- Active Pill: Blood Donor Volunteer (O-) -->
+<button class="inline-flex items-center gap-1.5 h-8 px-3 rounded-full text-caption font-caption font-semibold bg-[#2563EB] text-white shadow-sm hover:bg-primary transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[15px]" data-icon="bloodtype" style="font-variation-settings: 'FILL' 1;">bloodtype</span>
+<span>Blood Donor Volunteer (O-)</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="close">close</span>
+</button>
+<!-- Active Pill: Emergency Ride Share -->
+<button class="inline-flex items-center gap-1.5 h-8 px-3 rounded-full text-caption font-caption font-semibold bg-[#2563EB] text-white shadow-sm hover:bg-primary transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[15px]" data-icon="directions_car" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+<span>Emergency Ride Share</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="close">close</span>
+</button>
+<!-- Inactive Pill: Surplus Food Recipient -->
+<button class="inline-flex items-center gap-1.5 h-8 px-3 rounded-full text-caption font-caption text-on-surface-variant bg-white border border-[#E5E7EB] hover:border-outline transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[15px]" data-icon="local_dining">local_dining</span>
+<span>Surplus Food Recipient</span>
+</button>
+<!-- Add More Button -->
+<button class="inline-flex items-center gap-1 h-8 px-2.5 rounded-full text-caption font-caption text-primary bg-primary/10 border border-primary/20 hover:bg-primary/20 transition-all" type="button">
+<span class="material-symbols-outlined text-[15px]" data-icon="add">add</span>
+<span>Add interest</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Section: Trust & Security Callout Card -->
+<section class="p-3.5 sm:p-4 rounded-[18px] bg-white border border-[#E5E7EB] custom-card-shadow flex items-start gap-3">
+<div class="w-9 h-9 rounded-xl bg-[#DCFCE7] text-[#16A34A] flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div class="space-y-2 flex-1">
+<p class="text-caption font-caption text-on-surface-variant leading-relaxed">
+<strong class="text-on-surface font-semibold">TrustShare Community Guarantee:</strong> Your real contact info is encrypted and never made public without your explicit booking confirmation.
+          </p>
+<div class="flex items-center gap-3 pt-0.5">
+<span class="inline-flex items-center gap-1 text-[11px] font-medium text-outline">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+              256-Bit Encrypted
+            </span>
+<span class="text-outline text-[11px]">•</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-medium text-outline">
+<span class="material-symbols-outlined text-[14px] text-[#16A34A]" data-icon="handshake">handshake</span>
+              Mutual Trust Network
+            </span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component as per Shared Components JSON -->
+<footer class="w-full py-space-md flex flex-col items-center justify-center text-center px-margin-screen max-w-lg mx-auto pb-6">
+<div class="flex items-center gap-3 mb-2">
+<a class="text-caption font-caption text-on-surface-variant hover:text-primary transition-colors" href="#privacy">Privacy Policy</a>
+<span class="text-outline-variant text-caption">•</span>
+<a class="text-caption font-caption text-on-surface-variant hover:text-primary transition-colors" href="#terms">Terms of Service</a>
+<span class="text-outline-variant text-caption">•</span>
+<a class="text-caption font-caption text-on-surface-variant hover:text-primary transition-colors" href="#guarantee">Trust Guarantee</a>
+</div>
+<p class="text-caption font-caption text-outline max-w-xs">
+        © 2024 SubShare. Protected by Mutual Trust Network &amp; 256-Bit Encryption.
+      </p>
+</footer>
+<!-- Sticky Floating Bottom Transaction Bar -->
+<aside class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-lg border-t border-[#E5E7EB] custom-float-shadow">
+<div class="max-w-md mx-auto px-margin-screen py-3 space-y-1.5">
+<button class="w-full h-[52px] bg-primary-container hover:bg-[#1D4ED8] active:scale-[0.98] text-white rounded-xl font-body-base-medium font-semibold flex items-center justify-center gap-2 shadow-sm transition-all duration-150" type="button">
+<span>Save &amp; Enter SubShare</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="text-center text-[11px] text-outline">
+          You can adjust your privacy settings anytime in Profile.
+        </p>
+</div>
+</aside>
+</div>
+</body></html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TrustShare Admin Console</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#e1e8ff",
+            "secondary-fixed": "#7ffc97",
+            "on-tertiary-container": "#ffede1",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "on-primary-container": "#eeefff",
+            "surface-container": "#e9edff",
+            "surface-dim": "#d1daf4",
+            "on-tertiary-fixed": "#2f1500",
+            "surface-container-lowest": "#ffffff",
+            "outline": "#737686",
+            "primary-fixed-dim": "#b4c5ff",
+            "error": "#ba1a1a",
+            "tertiary-fixed": "#ffdcc3",
+            "secondary-container": "#7cf994",
+            "primary": "#004ac6",
+            "on-error": "#ffffff",
+            "surface": "#f9f9ff",
+            "on-surface-variant": "#434655",
+            "on-secondary-fixed": "#002109",
+            "tertiary-container": "#a65900",
+            "on-secondary-container": "#007230",
+            "inverse-on-surface": "#edf0ff",
+            "secondary-fixed-dim": "#62df7d",
+            "tertiary-fixed-dim": "#ffb77d",
+            "outline-variant": "#c3c6d7",
+            "primary-container": "#2563eb",
+            "on-secondary-fixed-variant": "#005320",
+            "surface-tint": "#0053db",
+            "on-secondary": "#ffffff",
+            "background": "#f9f9ff",
+            "tertiary": "#824500",
+            "on-surface": "#121b2e",
+            "surface-variant": "#d9e2fc",
+            "inverse-surface": "#273044",
+            "on-background": "#121b2e",
+            "error-container": "#ffdad6",
+            "inverse-primary": "#b4c5ff",
+            "on-primary-fixed": "#00174b",
+            "on-error-container": "#93000a",
+            "on-tertiary": "#ffffff",
+            "secondary": "#006e2d",
+            "on-primary-fixed-variant": "#003ea8",
+            "surface-container-highest": "#d9e2fc",
+            "surface-container-low": "#f1f3ff",
+            "surface-bright": "#f9f9ff",
+            "primary-fixed": "#dbe1ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.125rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-4xl": "3rem",
+            "space-sm": "0.75rem",
+            "space-md": "1rem",
+            "margin-screen": "1rem",
+            "space-xxs": "0.25rem",
+            "space-lg": "1.25rem",
+            "gutter-grid": "0.75rem",
+            "space-xs": "0.5rem",
+            "space-xl": "1.5rem",
+            "space-3xl": "2.5rem",
+            "space-2xl": "2rem"
+          },
+          "fontFamily": {
+            "caption": ["Inter"],
+            "headline-h1": ["Inter"],
+            "headline-h2": ["Inter"],
+            "title-base": ["Inter"],
+            "body-base": ["Inter"],
+            "headline-h3": ["Inter"],
+            "body-sm-medium": ["Inter"],
+            "display-hero": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-base-medium": ["Inter"],
+            "label-mono": ["Inter"]
+          },
+          "fontSize": {
+            "caption": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+            "headline-h1": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "title-base": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+            "body-base": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "headline-h3": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-sm-medium": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500"}],
+            "display-hero": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+            "body-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "body-base-medium": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "500"}],
+            "label-mono": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F6F8FB;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .card-shadow {
+      box-shadow: 0px 1px 2px rgba(23, 32, 51, 0.04), 0px 4px 12px rgba(23, 32, 51, 0.03);
+    }
+    .floating-shadow {
+      box-shadow: 0px 8px 24px -4px rgba(23, 32, 51, 0.08), 0px 2px 6px -1px rgba(23, 32, 51, 0.04);
+    }
+    .pulse-dot {
+      animation: pulse-animation 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    @keyframes pulse-animation {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .4; transform: scale(0.92); }
+    }
+  </style>
+</head>
+<body class="bg-[#F6F8FB] text-on-surface min-h-screen antialiased flex justify-center">
+<!-- Mobile Screen Container -->
+<div class="w-full max-w-lg bg-[#F6F8FB] min-h-screen pb-28 relative flex flex-col">
+<!-- Dark Slate Top Console Header (#0F172A) -->
+<header class="bg-[#0F172A] text-white px-margin-screen pt-4 pb-5 rounded-b-2xl shadow-md border-b border-slate-800 sticky top-0 z-30">
+<div class="flex items-center justify-between gap-2 mb-3">
+<!-- Brand & Security Logo -->
+<div class="flex items-center gap-space-xs">
+<img alt="TrustShare Emblem" class="w-8 h-8 rounded-lg object-contain bg-white/10 p-0.5" src="https://lh3.googleusercontent.com/aida/AEtjO1X_QSPZxPlZyiEdo4y5QFTFwt7qOUvcRzsMabqfgJMsfq9FeTyvNOokeeg7DGZ2jNW_ng0MJL0E28PWGSaq7ady88TwdorAwJHdcUQjO9ODhBkX8caAnB8ASFANjqLUN5VYPmp_SXpi9cCJMbUyAZyYxElrvdvccyri6F_4TYNss42vLl55Z3SYXBz-mOBBRm77krQ-m2nDOn9zBuZnnUmLVxpuuMWBSDPcmP1en9DkTSUxLbVCL8TxF3s"/>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-title-base text-title-base font-bold tracking-tight text-white">TrustShare Admin</span>
+<span class="material-symbols-outlined text-sky-400 text-[18px]" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<p class="font-caption text-caption text-slate-400">Mutual Trust &amp; Anti-Fraud Cluster</p>
+</div>
+</div>
+<!-- Exit to Consumer App Button -->
+<a class="flex items-center gap-1 bg-slate-800/90 hover:bg-slate-700 active:scale-[0.98] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-lg text-[13px] font-medium transition-all" href="#consumer">
+<span>App</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+<!-- SuperAdmin Role Badge Bar -->
+<div class="flex items-center justify-between pt-1">
+<div class="inline-flex items-center gap-1.5 bg-blue-500/15 border border-blue-400/30 px-2.5 py-1 rounded-full">
+<span class="w-2 h-2 rounded-full bg-blue-400"></span>
+<span class="font-caption text-caption text-blue-300 font-semibold tracking-wide uppercase text-[11px]">SuperAdmin • Fraud &amp; Compliance</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[11px] font-mono text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">NODE #NY-04</span>
+<button class="text-slate-300 hover:text-white flex items-center">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-margin-screen pt-4 space-y-4 flex-1">
+<!-- 1. Live Status Banner -->
+<div class="bg-surface-container-lowest card-shadow rounded-xl border border-emerald-200/80 p-3.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-white pulse-dot"></span>
+</div>
+<div>
+<h2 class="font-body-sm-medium text-body-sm-medium text-on-surface font-semibold flex items-center gap-1">
+              Security Shield Active
+            </h2>
+<p class="font-caption text-caption text-outline">Real-time Threat &amp; Escrow Monitoring</p>
+</div>
+</div>
+<span class="font-caption text-caption font-semibold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full text-[11px]">99.98% SAFE</span>
+</div>
+<!-- 2. 2x2 KPI Metrics Grid -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest card-shadow rounded-2xl border border-[#E5E7EB] p-3.5">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-caption text-caption text-on-surface-variant font-medium">Verified Users</span>
+<span class="material-symbols-outlined text-primary text-[18px]">group</span>
+</div>
+<div class="font-headline-h2 text-headline-h2 text-on-surface font-bold tracking-tight">24,850</div>
+<div class="mt-1.5 flex items-center text-[11px] font-caption text-emerald-700 font-medium">
+<span class="material-symbols-outlined text-[14px] mr-0.5 font-bold">trending_up</span>
+<span>+142 this wk</span>
+<span class="mx-1 text-slate-300">•</span>
+<span class="text-slate-500">98.4% ID</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest card-shadow rounded-2xl border border-[#E5E7EB] p-3.5">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-caption text-caption text-on-surface-variant font-medium">Active Escrow</span>
+<span class="material-symbols-outlined text-emerald-600 text-[18px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div class="font-headline-h2 text-headline-h2 text-on-surface font-bold tracking-tight">$142.6k</div>
+<div class="mt-1.5 flex items-center text-[11px] font-caption text-emerald-700 font-medium">
+<span class="material-symbols-outlined text-[14px] mr-0.5">verified</span>
+<span>0% Dispute Loss</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest card-shadow rounded-2xl border border-amber-200 p-3.5 bg-amber-50/20">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-caption text-caption text-amber-900 font-medium">Pending Org Review</span>
+<span class="material-symbols-outlined text-amber-600 text-[18px]">domain_verification</span>
+</div>
+<div class="font-headline-h2 text-headline-h2 text-on-surface font-bold tracking-tight">14</div>
+<div class="mt-1.5 flex items-center text-[11px] font-caption text-amber-800 font-medium">
+<span class="material-symbols-outlined text-[14px] mr-0.5 text-amber-600">priority_high</span>
+<span>4 Urgent NGOs</span>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-container-lowest card-shadow rounded-2xl border border-red-200 p-3.5 bg-red-50/20">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-caption text-caption text-red-900 font-medium">Fraud Alerts</span>
+<span class="material-symbols-outlined text-red-600 text-[18px]">gpp_maybe</span>
+</div>
+<div class="font-headline-h2 text-headline-h2 text-red-600 font-bold tracking-tight">3</div>
+<div class="mt-1.5 flex items-center text-[11px] font-caption text-red-700 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-red-600 mr-1.5 pulse-dot"></span>
+<span>Flagged Listings</span>
+</div>
+</div>
+</div>
+<!-- 3. Organization Verification Queue -->
+<section class="space-y-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h3 class="font-title-base text-title-base text-on-surface font-bold">NGO &amp; Charity Queue</h3>
+<span class="bg-blue-100 text-primary font-caption text-caption font-bold px-2 py-0.5 rounded-full">14</span>
+</div>
+<button class="inline-flex items-center gap-1 font-caption text-caption text-amber-800 bg-amber-100 border border-amber-200 px-2.5 py-1 rounded-full font-medium active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+<span>Urgent Only</span>
+</button>
+</div>
+<!-- NGO Verification Item Card -->
+<div class="bg-surface-container-lowest card-shadow rounded-2xl border border-[#E5E7EB] p-4 space-y-3">
+<!-- Org Title & Status -->
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3">
+<div class="w-11 h-11 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-primary shrink-0 font-bold text-[18px]">
+                HH
+              </div>
+<div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<h4 class="font-body-base-medium text-body-base-medium text-on-surface font-bold">Hope Haven Food Rescue</h4>
+<span class="bg-amber-100 text-amber-900 text-[10px] font-bold px-1.5 py-0.5 rounded border border-amber-200 uppercase tracking-wide">Urgent Priority</span>
+</div>
+<p class="font-caption text-caption text-outline mt-0.5">Nonprofit Food Redistribution &amp; Kitchens</p>
+</div>
+</div>
+</div>
+<!-- Registration Credentials -->
+<div class="bg-surface-container-low rounded-xl p-2.5 border border-slate-200/70 text-[12px] font-caption text-on-surface-variant space-y-1">
+<div class="flex items-center justify-between">
+<span class="text-outline">Registration ID:</span>
+<span class="font-mono font-medium text-on-surface">#NGO-8839-NY</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-outline">Federal EIN:</span>
+<span class="font-mono font-medium text-on-surface">82-49102 (IRS Confirmed)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-outline">Physical Hub:</span>
+<span class="font-medium text-on-surface">Brooklyn, NY (Zone 4)</span>
+</div>
+</div>
+<!-- Attached Documents (PDFs) -->
+<div class="space-y-1.5 pt-0.5">
+<p class="font-caption text-caption text-outline font-semibold uppercase text-[10px] tracking-wider">Submitted Credentials &amp; OCR</p>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface border border-slate-200 hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-red-600 text-[20px]">picture_as_pdf</span>
+<div>
+<div class="font-caption text-caption font-semibold text-on-surface">501(c)(3) Certificate.pdf</div>
+<div class="text-[10px] text-emerald-700 font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+                    OCR 99.4% Validated
+                  </div>
+</div>
+</div>
+<button class="text-primary hover:text-blue-700 text-xs font-semibold px-2 py-1 bg-blue-50 rounded">View</button>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface border border-slate-200 hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-red-600 text-[20px]">picture_as_pdf</span>
+<div>
+<div class="font-caption text-caption font-semibold text-on-surface">City Health Permit.pdf</div>
+<div class="text-[10px] text-slate-500 font-medium">Valid thru Nov 2026 • Sanitary Grade A</div>
+</div>
+</div>
+<button class="text-primary hover:text-blue-700 text-xs font-semibold px-2 py-1 bg-blue-50 rounded">View</button>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="w-full bg-[#16A34A] hover:bg-emerald-700 text-white font-body-sm-medium text-body-sm-medium font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 active:scale-[0.98] transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Approve Badge</span>
+</button>
+<button class="w-full bg-white hover:bg-red-50 text-[#DC2626] border border-red-200 font-body-sm-medium text-body-sm-medium font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[18px]">close</span>
+<span>Reject / Query</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 4. AI Fraud Detection & Suspicious Listings Queue -->
+<section class="space-y-2.5 pt-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h3 class="font-title-base text-title-base text-on-surface font-bold">AI Threat Watch</h3>
+<span class="bg-red-100 text-red-700 font-caption text-caption font-bold px-2 py-0.5 rounded-full">3 Flagged</span>
+</div>
+<span class="text-[11px] font-mono text-slate-500">Heuristic Engine v4.2</span>
+</div>
+<!-- Fraud Alert Card -->
+<div class="bg-surface-container-lowest card-shadow rounded-2xl border-2 border-red-300 p-4 space-y-3 bg-gradient-to-b from-red-50/40 to-white">
+<!-- Alert Header & Threat Pill -->
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-red-600 text-[20px]">warning</span>
+<span class="font-body-base-medium text-body-base-medium text-red-950 font-bold leading-snug">
+                Suspicious Ticket Listing
+              </span>
+</div>
+<span class="bg-red-600 text-white text-[11px] font-bold px-2 py-0.5 rounded-full shrink-0 tracking-wide">
+              89% HIGH RISK
+            </span>
+</div>
+<div class="font-body-sm-medium text-body-sm-medium text-on-surface font-medium">
+            Taylor Swift Eras Tour (2 Floor Seats - MetLife Stadium)
+          </div>
+<!-- Reason & Fingerprinting Data -->
+<div class="bg-red-100/60 border border-red-200 rounded-xl p-2.5 text-[12px] font-caption space-y-1.5">
+<div class="flex items-center gap-1 text-red-800 font-semibold">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+<span>Duplicate Barcode Hash Detected</span>
+</div>
+<p class="text-red-900 leading-tight">
+              Listing barcode payload matches previously redeemed token #BC-99801 in Toronto marketplace.
+            </p>
+<div class="pt-1 border-t border-red-200/80 text-[11px] text-slate-700 space-y-0.5">
+<div><strong class="text-slate-900">Seller:</strong> User #99214 • Account created 2 hours ago</div>
+<div><strong class="text-slate-900">IP Subnet:</strong> Same /24 block as banned entity #8129</div>
+</div>
+</div>
+<!-- Escrow Quarantine Notice -->
+<div class="flex items-center justify-between bg-surface-container-low px-3 py-2 rounded-lg border border-slate-200 text-xs">
+<div class="flex items-center gap-1.5 text-on-surface font-medium">
+<span class="material-symbols-outlined text-amber-600 text-[18px]">lock_clock</span>
+<span>Buyer Protection Escrow:</span>
+</div>
+<span class="font-bold font-mono text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded">$450 Frozen</span>
+</div>
+<!-- Threat Mitigation Quick Actions -->
+<div class="grid grid-cols-2 gap-2 pt-0.5">
+<button class="w-full bg-[#DC2626] hover:bg-red-700 text-white font-body-sm-medium text-body-sm-medium font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 active:scale-[0.98] transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">block</span>
+<span>Suspend &amp; Freeze</span>
+</button>
+<button class="w-full bg-white hover:bg-slate-100 text-on-surface border border-[#E5E7EB] font-body-sm-medium text-body-sm-medium font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[18px]">manage_search</span>
+<span>Investigate</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 5. Real-Time Security Audit Log -->
+<section class="space-y-2.5 pt-2">
+<div class="flex items-center justify-between">
+<h3 class="font-title-base text-title-base text-on-surface font-bold">Live Compliance Audit Log</h3>
+<span class="flex items-center gap-1 text-[11px] text-emerald-700 font-semibold">
+<span class="w-1.5 h-1.5 bg-emerald-500 rounded-full pulse-dot"></span>
+            Syncing Socket
+          </span>
+</div>
+<div class="bg-surface-container-lowest card-shadow rounded-2xl border border-[#E5E7EB] divide-y divide-slate-100 overflow-hidden">
+<!-- Log 1 -->
+<div class="p-3 flex items-start gap-2.5 text-xs font-caption">
+<span class="material-symbols-outlined text-blue-600 text-[18px] mt-0.5 shrink-0">document_scanner</span>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-semibold text-on-surface">Org #8839 OCR Verified</span>
+<span class="text-slate-400 font-mono text-[10px]">10:48 AM</span>
+</div>
+<p class="text-outline mt-0.5">Match: 99.4% against NY State Charities Bureau Registry database.</p>
+</div>
+</div>
+<!-- Log 2 -->
+<div class="p-3 flex items-start gap-2.5 text-xs font-caption">
+<span class="material-symbols-outlined text-emerald-600 text-[18px] mt-0.5 shrink-0">payments</span>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-semibold text-on-surface">Escrow Release #TX-4819</span>
+<span class="text-slate-400 font-mono text-[10px]">10:32 AM</span>
+</div>
+<p class="text-outline mt-0.5">$240 transferred after physical Gate B barcode scan mutual handshake.</p>
+</div>
+</div>
+<!-- Log 3 -->
+<div class="p-3 flex items-start gap-2.5 text-xs font-caption bg-red-50/30">
+<span class="material-symbols-outlined text-red-600 text-[18px] mt-0.5 shrink-0">shield_with_heart</span>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-semibold text-red-950">MFA OTP Bypass Blocked</span>
+<span class="text-slate-400 font-mono text-[10px]">10:15 AM</span>
+</div>
+<p class="text-outline mt-0.5">Automated brute-force signature isolated from IP 185.220.101.4 (Tor exit node).</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Institutional Footer Note from Shared Components System -->
+<footer class="pt-4 pb-2 text-center text-slate-400 font-caption text-caption space-y-1">
+<p class="text-[11px] text-outline">© 2024 SubShare / TrustShare. Protected by Mutual Trust Network &amp; 256-Bit Encryption.</p>
+<div class="flex justify-center gap-3 text-[11px] text-primary">
+<a class="hover:underline" href="#privacy">Privacy Policy</a>
+<span>•</span>
+<a class="hover:underline" href="#terms">Terms of Service</a>
+<span>•</span>
+<a class="hover:underline" href="#guarantee">Trust Guarantee</a>
+</div>
+</footer>
+</main>
+<!-- 6. Admin Docked Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-lg bg-surface-container-lowest/95 backdrop-blur-md border-t border-slate-200 px-4 py-2 z-40 flex justify-around items-center floating-shadow">
+<!-- Tab 1: Overview (Active) -->
+<button class="flex flex-col items-center justify-center text-primary group active:scale-95 transition-all">
+<div class="relative flex items-center justify-center p-1 rounded-xl bg-blue-50">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+</div>
+<span class="font-caption text-caption text-[11px] font-bold text-primary mt-0.5">Overview</span>
+</button>
+<!-- Tab 2: Verifications -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant group active:scale-95 transition-all relative">
+<div class="relative flex items-center justify-center p-1">
+<span class="material-symbols-outlined text-[22px] group-hover:text-on-surface">domain_verification</span>
+<span class="absolute -top-1 -right-2 bg-blue-600 text-white font-bold text-[9px] px-1.5 py-0.2 rounded-full border border-white">
+            14
+          </span>
+</div>
+<span class="font-caption text-caption text-[11px] font-medium text-on-surface-variant group-hover:text-on-surface mt-0.5">Verify</span>
+</button>
+<!-- Tab 3: Fraud Risk -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant group active:scale-95 transition-all relative">
+<div class="relative flex items-center justify-center p-1">
+<span class="material-symbols-outlined text-[22px] text-red-600">shield_with_house</span>
+<span class="absolute -top-1 -right-2 bg-red-600 text-white font-bold text-[9px] px-1.5 py-0.2 rounded-full border border-white">
+            3
+          </span>
+</div>
+<span class="font-caption text-caption text-[11px] font-medium text-red-600 mt-0.5">Fraud Risk</span>
+</button>
+<!-- Tab 4: Audit Logs -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant group active:scale-95 transition-all">
+<div class="relative flex items-center justify-center p-1">
+<span class="material-symbols-outlined text-[22px] group-hover:text-on-surface">history_toggle_off</span>
+</div>
+<span class="font-caption text-caption text-[11px] font-medium text-on-surface-variant group-hover:text-on-surface mt-0.5">Audit Logs</span>
+</button>
+</nav>
+</div>
+</body></html>

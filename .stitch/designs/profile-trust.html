@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SubShare - Profile &amp; Trust Center</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-surface": "#273044",
+            "on-surface-variant": "#434655",
+            "on-tertiary-fixed": "#2f1500",
+            "on-error-container": "#93000a",
+            "surface-dim": "#d1daf4",
+            "surface": "#f9f9ff",
+            "secondary": "#006e2d",
+            "on-tertiary-container": "#ffede1",
+            "background": "#f9f9ff",
+            "surface-bright": "#f9f9ff",
+            "primary-fixed-dim": "#b4c5ff",
+            "primary-container": "#2563eb",
+            "surface-variant": "#d9e2fc",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "on-secondary-fixed-variant": "#005320",
+            "on-secondary": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-secondary-container": "#007230",
+            "surface-container-highest": "#d9e2fc",
+            "tertiary": "#824500",
+            "on-primary-fixed-variant": "#003ea8",
+            "secondary-fixed-dim": "#62df7d",
+            "outline": "#737686",
+            "tertiary-container": "#a65900",
+            "secondary-container": "#7cf994",
+            "on-surface": "#121b2e",
+            "tertiary-fixed-dim": "#ffb77d",
+            "inverse-on-surface": "#edf0ff",
+            "outline-variant": "#c3c6d7",
+            "tertiary-fixed": "#ffdcc3",
+            "surface-tint": "#0053db",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#7ffc97",
+            "on-background": "#121b2e",
+            "error": "#ba1a1a",
+            "on-error": "#ffffff",
+            "surface-container-high": "#e1e8ff",
+            "surface-container-low": "#f1f3ff",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#dbe1ff",
+            "on-secondary-fixed": "#002109",
+            "inverse-primary": "#b4c5ff",
+            "on-primary-container": "#eeefff",
+            "on-primary-fixed": "#00174b",
+            "surface-container": "#e9edff",
+            "primary": "#004ac6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "1.5rem",
+            "space-lg": "1.25rem",
+            "space-4xl": "3rem",
+            "gutter-grid": "0.75rem",
+            "margin-screen": "1rem",
+            "space-xxs": "0.25rem",
+            "space-sm": "0.75rem",
+            "space-md": "1rem",
+            "space-xs": "0.5rem",
+            "space-2xl": "2rem",
+            "space-3xl": "2.5rem"
+          },
+          "fontFamily": {
+            "body-sm-medium": ["Inter"],
+            "title-base": ["Inter"],
+            "headline-h1": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-mono": ["Inter"],
+            "display-hero": ["Inter"],
+            "body-base": ["Inter"],
+            "headline-h3": ["Inter"],
+            "headline-h2": ["Inter"],
+            "caption": ["Inter"],
+            "body-base-medium": ["Inter"]
+          },
+          "fontSize": {
+            "body-sm-medium": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500"}],
+            "title-base": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+            "headline-h1": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "label-mono": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+            "display-hero": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+            "body-base": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "headline-h3": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "headline-h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "caption": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+            "body-base-medium": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "500"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    body {
+      background-color: #F6F8FB;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .custom-ring-gradient {
+      stroke-dasharray: 264;
+      stroke-dashoffset: 8;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 1s ease-in-out;
+    }
+    .card-shadow {
+      box-shadow: 0px 1px 2px rgba(23, 32, 51, 0.04), 0px 4px 12px rgba(23, 32, 51, 0.03);
+    }
+    .dock-shadow {
+      box-shadow: 0px -4px 20px rgba(18, 27, 46, 0.06);
+    }
+  </style>
+</head>
+<body class="text-on-surface flex justify-center min-h-screen bg-[#F6F8FB]">
+<!-- Mobile Viewport Container (~390px default mobile constraint) -->
+<main class="w-full max-w-[420px] bg-[#F6F8FB] min-h-screen flex flex-col relative pb-28 border-x border-[#E5E7EB]/50">
+<!-- Top App Bar (Shared Component Anchor translated) -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 px-margin-screen h-14 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<img alt="SubShare Logo" class="w-7 h-7 object-contain rounded-full" src="https://lh3.googleusercontent.com/aida/AEtjO1X_QSPZxPlZyiEdo4y5QFTFwt7qOUvcRzsMabqfgJMsfq9FeTyvNOokeeg7DGZ2jNW_ng0MJL0E28PWGSaq7ady88TwdorAwJHdcUQjO9ODhBkX8caAnB8ASFANjqLUN5VYPmp_SXpi9cCJMbUyAZyYxElrvdvccyri6F_4TYNss42vLl55Z3SYXBz-mOBBRm77krQ-m2nDOn9zBuZnnUmLVxpuuMWBSDPcmP1en9DkTSUxLbVCL8TxF3s"/>
+<span class="font-title-base text-title-base font-bold text-primary tracking-tight">SubShare</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded-full bg-surface-container-low border border-outline-variant/40 hover:bg-surface-container text-primary font-body-sm-medium text-body-sm-medium flex items-center gap-1 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit</span>
+</button>
+<button aria-label="Settings" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+</button>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="px-margin-screen pt-4 space-y-space-md">
+<!-- Breadcrumb Context & Identity Shield Bar -->
+<div class="bg-white border border-[#E5E7EB] rounded-xl p-3 flex items-center justify-between card-shadow">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-emerald-50 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">shield</span>
+</span>
+<div class="leading-none">
+<p class="font-body-sm-medium text-body-sm-medium text-on-surface font-semibold">Identity Verified Resident</p>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">Mutual Trust Network • 256-Bit Cryptographic ID</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<!-- User Profile Card -->
+<section class="bg-white border border-[#E5E7EB] rounded-2xl p-space-lg card-shadow">
+<div class="flex items-start gap-4">
+<!-- Avatar with Verified Check Badge -->
+<div class="relative">
+<img class="w-16 h-16 rounded-full object-cover border-2 border-white shadow-sm ring-2 ring-primary-container/20" data-alt="A clean, professional portrait of a smiling young adult man named Alexander Wright wearing a neutral navy knit sweater outdoors in soft natural morning daylight, sharp focus with high aesthetic quality and modern fintech styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBahCkMAwIEnR50h0Xy_xKZExAxF98eI2377YPNlQheXhK1vbml8iRe5hr8CdRMWMtc_9Q_6c3SOm_G2ln79MlJoCysGjwL3NBolvAER-Pr4RsNYnG0PSO1oHPJPWcKr1yYYrFvc0-Voy9DLgLdeSjA2rOkWPNM4FUTYSI5YCQC_PvL8aiJ0yoKWXUYBqiBuDYqqMa41uv_8qeugzrnDcNWJnVye7qq2htT_kgvXI5Xe8c10UtlSVf1bWG1MF5_AzzZuGOviPQ36vs3"/>
+<span class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-primary-container text-white flex items-center justify-center shadow-md border-2 border-white" title="Verified Individual">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+</div>
+<!-- User Identifiers -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h1 class="font-headline-h3 text-headline-h3 text-on-surface truncate">Alexander Wright</h1>
+</div>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-outline">location_on</span>
+<span class="font-body-sm text-body-sm">Brooklyn, NY • Fort Greene</span>
+</div>
+<div class="inline-flex items-center gap-1 mt-1.5 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200/60 text-secondary">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-caption text-caption font-semibold">Verified Individual</span>
+</div>
+</div>
+</div>
+<!-- Community Micro-Stats Pill Row -->
+<div class="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-[#E5E7EB]/70 text-center">
+<div class="p-2 rounded-xl bg-surface-container-low/70">
+<p class="font-headline-h3 text-headline-h3 text-on-surface font-bold">48</p>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">Exchanges</p>
+</div>
+<div class="p-2 rounded-xl bg-surface-container-low/70">
+<div class="flex items-center justify-center gap-0.5">
+<p class="font-headline-h3 text-headline-h3 text-on-surface font-bold">5.0</p>
+<span class="material-symbols-outlined text-amber-500 text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">38 Reviews</p>
+</div>
+<div class="p-2 rounded-xl bg-surface-container-low/70">
+<p class="font-headline-h3 text-headline-h3 text-on-surface font-bold">2024</p>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">Member Since</p>
+</div>
+</div>
+</section>
+<!-- The Trust Score Center (Featured Card) -->
+<section class="bg-white border border-[#E5E7EB] rounded-2xl p-space-lg card-shadow relative overflow-hidden">
+<!-- Accent gradient top hairline -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-container via-blue-500 to-secondary"></div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-container text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<h2 class="font-title-base text-title-base text-on-surface">Mutual Trust Protocol Score</h2>
+</div>
+<button aria-label="Score info" class="text-outline hover:text-on-surface active:scale-95">
+<span class="material-symbols-outlined text-[18px]">info</span>
+</button>
+</div>
+<!-- Gauge & Tier Highlight -->
+<div class="flex items-center gap-4 bg-surface-container-low/60 rounded-xl p-3.5 border border-[#E5E7EB]/80">
+<!-- Circular Ring Gauge -->
+<div class="relative w-20 h-20 flex-shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="42" stroke="#E5E7EB" stroke-width="8"></circle>
+<circle class="custom-ring-gradient" cx="50" cy="50" fill="none" r="42" stroke="url(#scoreGradient)" stroke-width="8"></circle>
+<defs>
+<lineargradient id="scoreGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#2563EB"></stop>
+<stop offset="100%" stop-color="#16A34A"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-h2 text-headline-h2 font-bold text-on-surface leading-none">98</span>
+<span class="font-caption text-caption text-outline leading-none mt-0.5">/ 100</span>
+</div>
+</div>
+<!-- Tier Label & Description -->
+<div class="flex-1 min-w-0">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-secondary font-caption text-caption font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+              Highly Trusted Neighbor
+            </div>
+<p class="font-body-sm-medium text-body-sm-medium text-on-surface font-semibold mt-1">Tier 1 Verification</p>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5 leading-snug">Max $2,500 transaction limits unlocked with automated zero-deposit escrow protection.</p>
+</div>
+</div>
+<!-- Explainable Trust Factor Progress Bars -->
+<div class="mt-4 space-y-2.5">
+<p class="font-caption text-caption uppercase tracking-wider font-semibold text-outline">Score Factors &amp; Benchmarks</p>
+<!-- Factor 1 -->
+<div>
+<div class="flex justify-between text-caption font-caption mb-1">
+<span class="text-on-surface font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">check</span>
+                Identity &amp; Phone Verification
+              </span>
+<span class="text-secondary font-semibold">100% (Confirmed)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full w-full"></div>
+</div>
+</div>
+<!-- Factor 2 -->
+<div>
+<div class="flex justify-between text-caption font-caption mb-1">
+<span class="text-on-surface font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">check</span>
+                Completed Transactions (48/48)
+              </span>
+<span class="text-on-surface font-semibold">98%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full w-[98%]"></div>
+</div>
+</div>
+<!-- Factor 3 -->
+<div>
+<div class="flex justify-between text-caption font-caption mb-1">
+<span class="text-on-surface font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">check</span>
+                Community Ratings (5.0 ★)
+              </span>
+<span class="text-secondary font-semibold">100%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full w-full"></div>
+</div>
+</div>
+<!-- Factor 4 -->
+<div>
+<div class="flex justify-between text-caption font-caption mb-1">
+<span class="text-on-surface font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">check</span>
+                Response Reliability (&lt;3 min avg)
+              </span>
+<span class="text-on-surface font-semibold">96%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full w-[96%]"></div>
+</div>
+</div>
+<!-- Factor 5 -->
+<div>
+<div class="flex justify-between text-caption font-caption mb-1">
+<span class="text-on-surface font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">check</span>
+                Zero Dispute History
+              </span>
+<span class="text-secondary font-semibold">100% Clean</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full w-full"></div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#E5E7EB] flex items-center justify-between">
+<a class="font-body-sm-medium text-body-sm-medium text-primary hover:underline inline-flex items-center gap-1" href="#">
+<span>How SubShare calculates trust scores</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<span class="font-caption text-caption text-outline">Updated 2m ago</span>
+</div>
+</section>
+<!-- Verified Trust Credentials & Badges -->
+<section class="space-y-2">
+<div class="flex items-center justify-between px-1">
+<h2 class="font-title-base text-title-base text-on-surface font-semibold">Verified Credentials</h2>
+<span class="font-caption text-caption font-medium px-2 py-0.5 rounded-full bg-emerald-50 text-secondary border border-emerald-200">
+            4 of 4 Verified
+          </span>
+</div>
+<div class="space-y-2">
+<!-- Credential 1 -->
+<div class="bg-white border border-[#E5E7EB] rounded-xl p-3 card-shadow flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-emerald-50 text-secondary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<p class="font-body-sm-medium text-body-sm-medium text-on-surface font-semibold">Government ID Verified</p>
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">US Passport • ISO-27001 Cryptographic Hash</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">lock</span>
+</div>
+<!-- Credential 2 -->
+<div class="bg-white border border-[#E5E7EB] rounded-xl p-3 card-shadow flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-emerald-50 text-secondary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">smartphone</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<p class="font-body-sm-medium text-body-sm-medium text-on-surface font-semibold">Mobile OTP Verified</p>
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">+1 (555) 019-2834 • Primary 2FA Device</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">verified</span>
+</div>
+<!-- Credential 3 -->
+<div class="bg-white border border-[#E5E7EB] rounded-xl p-3 card-shadow flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">favorite</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<p class="font-body-sm-medium text-body-sm-medium text-on-surface font-semibold">Emergency Aid Volunteer</p>
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Registered Blood Donor (O-) • CPR Certified</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">health_and_safety</span>
+</div>
+<!-- Credential 4 -->
+<div class="bg-white border border-[#E5E7EB] rounded-xl p-3 card-shadow flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-blue-50 text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">account_balance</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<p class="font-body-sm-medium text-body-sm-medium text-on-surface font-semibold">Escrow Payment Connected</p>
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Chase Checking • Stripe Identity Verified</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">shield</span>
+</div>
+</div>
+</section>
+<!-- Account Preferences & Safety Settings -->
+<section class="space-y-2 pt-2">
+<div class="px-1">
+<h2 class="font-title-base text-title-base text-on-surface font-semibold">Preferences &amp; Safety</h2>
+</div>
+<div class="bg-white border border-[#E5E7EB] rounded-2xl overflow-hidden card-shadow divide-y divide-[#E5E7EB]/80">
+<!-- Preference 1 -->
+<div class="p-3.5 flex items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+</div>
+<div>
+<p class="font-body-sm-medium text-body-sm-medium text-on-surface font-medium">Emergency &amp; Mutual Aid Alerts</p>
+<p class="font-caption text-caption text-on-surface-variant">Enabled • Fort Greene 5km radius</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">chevron_right</span>
+</div>
+<!-- Preference 2 -->
+<div class="p-3.5 flex items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">location_searching</span>
+</div>
+<div>
+<p class="font-body-sm-medium text-body-sm-medium text-on-surface font-medium">Privacy &amp; Location Sharing</p>
+<p class="font-caption text-caption text-on-surface-variant">Active handoffs only • Obfuscated range</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">chevron_right</span>
+</div>
+<!-- Preference 3 -->
+<div class="p-3.5 flex items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">policy</span>
+</div>
+<div>
+<p class="font-body-sm-medium text-body-sm-medium text-on-surface font-medium">Safety Center &amp; Community Guidelines</p>
+<p class="font-caption text-caption text-on-surface-variant">Neighborhood resolution protocol</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">chevron_right</span>
+</div>
+<!-- Preference 4 -->
+<div class="p-3.5 flex items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">gavel</span>
+</div>
+<div>
+<p class="font-body-sm-medium text-body-sm-medium text-on-surface font-medium">Terms &amp; Trust Guarantee</p>
+<p class="font-caption text-caption text-on-surface-variant">$10,000 mutual item protection backed</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">chevron_right</span>
+</div>
+<!-- Log Out Button -->
+<button class="w-full p-3.5 flex items-center gap-3 text-left hover:bg-rose-50/50 transition-colors text-error">
+<div class="w-9 h-9 rounded-lg bg-red-50 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+</div>
+<span class="font-body-sm-medium text-body-sm-medium font-semibold">Log Out</span>
+</button>
+</div>
+</section>
+<!-- Footer Anchor translated from Shared Components JSON -->
+<footer class="w-full py-space-md flex flex-col items-center justify-center text-center px-margin-screen mx-auto mt-4 pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-1.5 mb-2">
+<img alt="SubShare" class="w-4 h-4 object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X_QSPZxPlZyiEdo4y5QFTFwt7qOUvcRzsMabqfgJMsfq9FeTyvNOokeeg7DGZ2jNW_ng0MJL0E28PWGSaq7ady88TwdorAwJHdcUQjO9ODhBkX8caAnB8ASFANjqLUN5VYPmp_SXpi9cCJMbUyAZyYxElrvdvccyri6F_4TYNss42vLl55Z3SYXBz-mOBBRm77krQ-m2nDOn9zBuZnnUmLVxpuuMWBSDPcmP1en9DkTSUxLbVCL8TxF3s"/>
+<span class="font-caption text-caption font-semibold text-on-surface-variant">SubShare Trust Engine</span>
+</div>
+<div class="flex items-center gap-3 font-caption text-caption text-on-surface-variant mb-2">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<span>•</span>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<span>•</span>
+<a class="hover:text-primary transition-colors" href="#">Trust Guarantee</a>
+</div>
+<p class="font-caption text-caption text-outline text-[11px] max-w-xs leading-relaxed">
+          © 2024 SubShare. Protected by Mutual Trust Network &amp; 256-Bit Encryption.
+        </p>
+</footer>
+</div>
+<!-- Fixed Bottom Navigation Dock (5-item Mobile Hierarchy) -->
+<!-- Prohibiting top border line as per Semantic Shell rule: separating via background and elevation shadow -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[420px] bg-white/95 backdrop-blur-lg dock-shadow z-50 flex items-center justify-around h-16 px-2 pb-safe">
+<!-- Home Tab -->
+<a class="flex flex-col items-center justify-center w-14 h-full text-outline hover:text-on-surface active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-caption text-[11px] leading-tight mt-0.5">Home</span>
+</a>
+<!-- Explore Tab -->
+<a class="flex flex-col items-center justify-center w-14 h-full text-outline hover:text-on-surface active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-[22px]">explore</span>
+<span class="font-caption text-[11px] leading-tight mt-0.5">Explore</span>
+</a>
+<!-- Activity Tab -->
+<a class="flex flex-col items-center justify-center w-14 h-full text-outline hover:text-on-surface active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-[22px]">sync_alt</span>
+<span class="font-caption text-[11px] leading-tight mt-0.5">Activity</span>
+</a>
+<!-- Messages Tab with badge -->
+<a class="flex flex-col items-center justify-center w-14 h-full text-outline hover:text-on-surface active:scale-95 transition-all relative" href="#">
+<div class="relative">
+<span class="material-symbols-outlined text-[22px]">chat_bubble_outline</span>
+<span class="absolute -top-1 -right-1.5 w-4 h-4 bg-primary-container text-white text-[10px] font-bold rounded-full flex items-center justify-center">1</span>
+</div>
+<span class="font-caption text-[11px] leading-tight mt-0.5">Messages</span>
+</a>
+<!-- Profile Tab (LOCKED ACTIVE per Source of Truth Intent Match) -->
+<a class="flex flex-col items-center justify-center w-14 h-full text-primary font-body-sm-medium relative active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-caption text-[11px] font-bold leading-tight mt-0.5">Profile</span>
+<!-- Active indicator dot -->
+<span class="w-1 h-1 bg-primary rounded-full absolute bottom-1.5"></span>
+</a>
+</nav>
+</main>
+</body></html>

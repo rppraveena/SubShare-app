@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SubShare - TrustShare Service Listing Feed</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Inter Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-variant": "#d9e2fc",
+            "inverse-surface": "#273044",
+            "background": "#f9f9ff",
+            "primary-fixed": "#dbe1ff",
+            "on-background": "#121b2e",
+            "surface-tint": "#0053db",
+            "tertiary-fixed-dim": "#ffb77d",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "secondary-fixed": "#7ffc97",
+            "secondary-container": "#7cf994",
+            "on-secondary-container": "#007230",
+            "on-surface": "#121b2e",
+            "outline": "#737686",
+            "primary-container": "#2563eb",
+            "surface": "#f9f9ff",
+            "inverse-primary": "#b4c5ff",
+            "surface-container-highest": "#d9e2fc",
+            "primary-fixed-dim": "#b4c5ff",
+            "surface-container": "#e9edff",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#003ea8",
+            "on-primary-container": "#eeefff",
+            "secondary": "#006e2d",
+            "surface-dim": "#d1daf4",
+            "on-error-container": "#93000a",
+            "tertiary": "#824500",
+            "primary": "#004ac6",
+            "surface-container-lowest": "#ffffff",
+            "error": "#ba1a1a",
+            "tertiary-container": "#a65900",
+            "surface-bright": "#f9f9ff",
+            "on-tertiary-container": "#ffede1",
+            "inverse-on-surface": "#edf0ff",
+            "on-surface-variant": "#434655",
+            "on-primary": "#ffffff",
+            "outline-variant": "#c3c6d7",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed": "#2f1500",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#ffdcc3",
+            "on-primary-fixed": "#00174b",
+            "surface-container-low": "#f1f3ff",
+            "surface-container-high": "#e1e8ff",
+            "on-secondary-fixed-variant": "#005320",
+            "on-secondary-fixed": "#002109",
+            "secondary-fixed-dim": "#62df7d",
+            "on-error": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xxs": "0.25rem",
+            "space-xs": "0.5rem",
+            "space-sm": "0.75rem",
+            "space-md": "1rem",
+            "space-lg": "1.25rem",
+            "space-xl": "1.5rem",
+            "space-2xl": "2rem",
+            "space-3xl": "2.5rem",
+            "space-4xl": "3rem",
+            "margin-screen": "1rem",
+            "gutter-grid": "0.75rem"
+          },
+          "fontFamily": {
+            "body-sm-medium": ["Inter"],
+            "title-base": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-h1": ["Inter"],
+            "body-base": ["Inter"],
+            "headline-h3": ["Inter"],
+            "display-hero": ["Inter"],
+            "caption": ["Inter"],
+            "headline-h2": ["Inter"],
+            "label-mono": ["Inter"],
+            "body-base-medium": ["Inter"]
+          },
+          "fontSize": {
+            "body-sm-medium": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "title-base": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-h1": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-base": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-h3": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-hero": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "caption": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "headline-h2": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-mono": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-base-medium": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Hide scrollbar for category pills container */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-[#F6F8FB] text-on-surface antialiased font-body-base selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Mobile Viewport Container (~390px width frame) -->
+<div class="max-w-[420px] mx-auto min-h-screen bg-[#F6F8FB] flex flex-col relative shadow-xl">
+<!-- 1. TOP APP BAR & HEADER (Shared Component JSON Blueprint Compliant) -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-margin-screen h-14 max-w-lg mx-auto">
+<!-- Brand Logo & Trust Emblem -->
+<div class="text-title-base font-title-base font-bold text-primary flex items-center gap-space-xs">
+<img alt="SubShare TrustShield Emblem" class="w-8 h-8 rounded-lg object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X_QSPZxPlZyiEdo4y5QFTFwt7qOUvcRzsMabqfgJMsfq9FeTyvNOokeeg7DGZ2jNW_ng0MJL0E28PWGSaq7ady88TwdorAwJHdcUQjO9ODhBkX8caAnB8ASFANjqLUN5VYPmp_SXpi9cCJMbUyAZyYxElrvdvccyri6F_4TYNss42vLl55Z3SYXBz-mOBBRm77krQ-m2nDOn9zBuZnnUmLVxpuuMWBSDPcmP1en9DkTSUxLbVCL8TxF3s"/>
+<span class="tracking-tight text-primary">SubShare</span>
+<span class="inline-flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded-full text-caption font-caption text-primary border border-surface-variant ml-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Verified
+          </span>
+</div>
+<!-- Trailing Action: Notification & Help -->
+<div class="flex items-center gap-space-xs">
+<button aria-label="Notifications" class="relative p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-error text-[10px] font-bold text-on-error">
+              3
+            </span>
+</button>
+<button class="text-body-sm-medium font-body-sm-medium text-primary hover:bg-surface-container px-2.5 py-1 rounded-lg transition-colors active:scale-[0.98]" type="button">
+            Help
+          </button>
+</div>
+</div>
+<!-- Search & Filters Bar -->
+<div class="px-margin-screen pb-3 pt-1">
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full pl-9 pr-3 py-2.5 bg-surface-container-lowest border border-[#E5E7EB] rounded-xl text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/15 transition-all shadow-sm" placeholder="Search tickets, rides, blood aid, food..." type="text"/>
+</div>
+<button aria-label="Filter Options" class="relative p-2.5 bg-surface-container-lowest border border-[#E5E7EB] rounded-xl text-on-surface hover:bg-surface-container transition-all active:scale-[0.98] shadow-sm flex items-center justify-center shrink-0" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span>
+</button>
+</div>
+<!-- Horizontal Scrolling Category Filter Chips -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar pt-3 pb-1 -mx-margin-screen px-margin-screen">
+<!-- Active Chip -->
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary text-caption font-caption font-semibold shadow-sm shrink-0 whitespace-nowrap active:scale-[0.98]" type="button">
+<span>All Feeds</span>
+</button>
+<!-- Tickets Chip -->
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest border border-[#E5E7EB] text-on-surface hover:border-outline-variant text-caption font-caption shrink-0 whitespace-nowrap active:scale-[0.98]" type="button">
+<span>🎟️ Tickets</span>
+<span class="px-1.5 py-0.2 bg-surface-container text-primary rounded-full text-[11px] font-semibold">12</span>
+</button>
+<!-- Rides Chip -->
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest border border-[#E5E7EB] text-on-surface hover:border-outline-variant text-caption font-caption shrink-0 whitespace-nowrap active:scale-[0.98]" type="button">
+<span>🚗 Rides</span>
+<span class="px-1.5 py-0.2 bg-surface-container text-primary rounded-full text-[11px] font-semibold">8</span>
+</button>
+<!-- Blood Aid (Urgent Chip) -->
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-error-container/40 border border-error/40 text-error hover:bg-error-container text-caption font-caption font-semibold shrink-0 whitespace-nowrap active:scale-[0.98]" type="button">
+<span>🩸 Blood Aid</span>
+<span class="px-1.5 py-0.2 bg-error text-on-error rounded-full text-[10px] font-bold uppercase tracking-wider">2 Urgent</span>
+</button>
+<!-- Food Rescue Chip -->
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest border border-[#E5E7EB] text-on-surface hover:border-outline-variant text-caption font-caption shrink-0 whitespace-nowrap active:scale-[0.98]" type="button">
+<span>🍲 Food Rescue</span>
+<span class="px-1.5 py-0.2 bg-surface-container text-primary rounded-full text-[11px] font-semibold">5</span>
+</button>
+<!-- Subscriptions Chip -->
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest border border-[#E5E7EB] text-on-surface hover:border-outline-variant text-caption font-caption shrink-0 whitespace-nowrap active:scale-[0.98]" type="button">
+<span>📱 Subscriptions</span>
+<span class="px-1.5 py-0.2 bg-surface-container text-primary rounded-full text-[11px] font-semibold">14</span>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN SCROLLABLE CONTENT CANVAS -->
+<main class="flex-1 px-margin-screen py-space-sm space-y-space-md">
+<!-- 2. PINNED URGENT EMERGENCY AID BANNER -->
+<section class="rounded-2xl bg-[#FEE2E2] border border-[#FCA5A5] p-space-md shadow-sm relative overflow-hidden">
+<!-- Ambient pulsating beacon indicator -->
+<div class="flex items-center justify-between gap-2 mb-2">
+<div class="inline-flex items-center gap-1.5 bg-[#DC2626] text-white px-2.5 py-0.5 rounded-full text-caption font-caption font-bold tracking-wide">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+</span>
+<span>🚨 EMERGENCY AID REQUIRED</span>
+</div>
+<span class="text-caption font-caption font-medium text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">timer</span> Priority 1
+          </span>
+</div>
+<h2 class="text-title-base font-title-base text-[#7F1D1D] font-bold mt-1">
+          O- Blood Needed at City Memorial Hospital
+        </h2>
+<!-- Emergency Metadata Chips -->
+<div class="flex flex-wrap gap-1.5 mt-2.5 mb-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-white/80 border border-[#FCA5A5]/60 text-caption font-caption text-[#991B1B]">
+<span class="material-symbols-outlined text-[14px]">near_me</span> 1.2 km away
+          </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-white/80 border border-[#FCA5A5]/60 text-caption font-caption text-[#991B1B]">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Needed before 8:30 PM
+          </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-white/80 border border-[#FCA5A5]/60 text-caption font-caption text-[#991B1B] font-semibold">
+<span class="material-symbols-outlined text-[14px]">group</span> 2 Donors Required
+          </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#DCFCE7] border border-[#86EFAC] text-caption font-caption text-[#166534]">
+<span class="material-symbols-outlined text-[14px]">verified</span> Verified Hospital Request
+          </span>
+</div>
+<!-- Emergency CTAs -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="w-full flex items-center justify-center gap-1.5 bg-[#DC2626] hover:bg-[#B91C1C] text-white font-body-sm-medium text-body-sm-medium py-2.5 px-3 rounded-xl shadow transition-all active:scale-[0.98]" type="button">
+<span>Respond / I Can Help</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="w-full flex items-center justify-center gap-1.5 bg-white hover:bg-[#FEF2F2] border border-[#FCA5A5] text-[#991B1B] font-body-sm-medium text-body-sm-medium py-2.5 px-3 rounded-xl transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span>Share Alert</span>
+</button>
+</div>
+</section>
+<!-- 3. HIGH-FIDELITY SERVICE LISTING CARDS FEED -->
+<section class="space-y-space-md">
+<!-- CARD 1: Ticket Escrow Card -->
+<article class="bg-surface-container-lowest rounded-2xl border border-[#E5E7EB] p-space-md shadow-[0px_1px_2px_rgba(23,32,51,0.04),0px_4px_12px_rgba(23,32,51,0.03)] transition-all">
+<!-- Top Badges Row -->
+<div class="flex items-center justify-between gap-2 mb-2.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-primary font-caption text-caption font-semibold">
+<span>🎟️ Event Tickets</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#DCFCE7] text-[#166534] font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[14px] material-symbols-fill">verified_user</span> Escrow Protected
+            </span>
+</div>
+<!-- Title & Venue -->
+<h3 class="text-title-base font-title-base text-on-surface font-bold">
+            Coldplay Music of the Spheres • 2 VIP Passes
+          </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px] text-outline">stadium</span>
+            MetLife Stadium • Tomorrow, 7:00 PM
+          </p>
+<!-- Seller Profile Mini Row -->
+<div class="flex items-center justify-between my-3 py-2.5 px-3 rounded-xl bg-surface-container-low border border-outline-variant/30">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-caption font-caption">
+                SJ
+              </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-body-sm-medium font-body-sm-medium text-on-surface font-semibold">Sarah J.</span>
+<span class="inline-flex items-center text-[11px] font-medium text-secondary">
+<span class="material-symbols-outlined text-[13px] text-secondary">check_circle</span> Verified ID
+                  </span>
+</div>
+<div class="flex items-center gap-2 text-caption font-caption text-on-surface-variant">
+<span class="text-[#D97706] font-semibold">★ 4.98 <span class="font-normal text-outline">(42 sales)</span></span>
+<span>•</span>
+<span class="text-primary font-semibold">Trust Score 99</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">shield_person</span>
+</div>
+<!-- Protection Guarantee Banner -->
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container/60 border border-surface-variant text-caption font-caption text-primary mb-3.5">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0">lock</span>
+<span>Funds held in smart escrow until scanned at venue</span>
+</div>
+<!-- Pricing & CTA -->
+<div class="flex items-center justify-between pt-1 border-t border-[#E5E7EB]">
+<div>
+<div class="flex items-baseline gap-1.5">
+<span class="text-headline-h3 font-headline-h3 text-on-surface font-bold">$120</span>
+<span class="text-caption font-caption text-on-surface-variant">/ ea</span>
+<span class="text-caption font-caption text-outline line-through">$185</span>
+</div>
+<span class="text-[11px] text-secondary font-medium block mt-0.5">Verified authentic barcode</span>
+</div>
+<button class="bg-primary-container hover:bg-primary text-on-primary font-body-sm-medium text-body-sm-medium py-2.5 px-4 rounded-xl shadow-sm transition-all active:scale-[0.98] flex items-center gap-1" type="button">
+<span>Buy Protected Ticket</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- CARD 2: Carpool / Ride Share Card -->
+<article class="bg-surface-container-lowest rounded-2xl border border-[#E5E7EB] p-space-md shadow-[0px_1px_2px_rgba(23,32,51,0.04),0px_4px_12px_rgba(23,32,51,0.03)] transition-all">
+<div class="flex items-center justify-between gap-2 mb-2.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-primary font-caption text-caption font-semibold">
+<span>🚗 Verified Carpool</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-variant text-primary font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[14px]">shield</span> Women-Preferred
+            </span>
+</div>
+<h3 class="text-title-base font-title-base text-on-surface font-bold">
+            Brooklyn to JFK Terminal 4
+          </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+            Today, 4:15 PM • Pickup: 240m from your location (Grand St)
+          </p>
+<!-- Driver Profile Row -->
+<div class="flex items-center justify-between my-3 py-2.5 px-3 rounded-xl bg-surface-container-low border border-outline-variant/30">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-inverse-surface text-inverse-on-surface flex items-center justify-center font-bold text-caption font-caption">
+                DK
+              </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-body-sm-medium font-body-sm-medium text-on-surface font-semibold">David K.</span>
+<span class="text-caption font-caption text-[#D97706] font-semibold">★ 4.9 <span class="font-normal text-outline">(120 rides)</span></span>
+</div>
+<div class="text-caption font-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-outline">directions_car</span>
+                  Tesla Model 3 (Blue)
+                </div>
+</div>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-[#DCFCE7] text-[#166534] text-caption font-caption font-semibold">
+              2 seats left
+            </span>
+</div>
+<!-- Pricing & CTA -->
+<div class="flex items-center justify-between pt-1 border-t border-[#E5E7EB]">
+<div>
+<div class="flex items-baseline gap-1">
+<span class="text-headline-h3 font-headline-h3 text-on-surface font-bold">$18</span>
+<span class="text-caption font-caption text-on-surface-variant">/ seat</span>
+</div>
+<span class="text-[11px] text-outline">Tolls included • Fastrak</span>
+</div>
+<button class="bg-surface-container-lowest border border-primary-container text-primary-container hover:bg-surface-container font-body-sm-medium text-body-sm-medium py-2.5 px-4 rounded-xl transition-all active:scale-[0.98]" type="button">
+              Request Seat
+            </button>
+</div>
+</article>
+<!-- CARD 3: Digital Subscription Group Card -->
+<article class="bg-surface-container-lowest rounded-2xl border border-[#E5E7EB] p-space-md shadow-[0px_1px_2px_rgba(23,32,51,0.04),0px_4px_12px_rgba(23,32,51,0.03)] transition-all">
+<div class="flex items-center justify-between gap-2 mb-2.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-primary font-caption text-caption font-semibold">
+<span>📱 Family Group</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-variant text-primary font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[14px]">lock</span> SubShare Escrow
+            </span>
+</div>
+<h3 class="text-title-base font-title-base text-on-surface font-bold">
+            Spotify Premium Family Plan
+          </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+            2 of 5 slots open • Official invite link sent instantly • No password sharing required
+          </p>
+<!-- Organizer Row -->
+<div class="flex items-center justify-between my-3 py-2.5 px-3 rounded-xl bg-surface-container-low border border-outline-variant/30">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-caption font-caption">
+                ER
+              </div>
+<div>
+<span class="text-body-sm-medium font-body-sm-medium text-on-surface font-semibold">Elena R.</span>
+<div class="flex items-center gap-2 text-caption font-caption text-on-surface-variant">
+<span class="text-primary font-semibold">Trust Score 96</span>
+<span>•</span>
+<span>Active for 14 mos</span>
+</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface text-on-surface text-caption font-caption border border-outline-variant/50">
+              Auto-renew
+            </span>
+</div>
+<!-- Pricing & CTA -->
+<div class="flex items-center justify-between pt-1 border-t border-[#E5E7EB]">
+<div>
+<div class="flex items-baseline gap-1">
+<span class="text-headline-h3 font-headline-h3 text-on-surface font-bold">₹120</span>
+<span class="text-caption font-caption text-on-surface-variant">/ mo</span>
+</div>
+<span class="text-[11px] text-outline">~$2.50/mo equivalent</span>
+</div>
+<button class="bg-surface-container-lowest border border-[#E5E7EB] text-on-surface hover:bg-surface-container font-body-sm-medium text-body-sm-medium py-2.5 px-4 rounded-xl transition-all active:scale-[0.98]" type="button">
+              Request to Join
+            </button>
+</div>
+</article>
+<!-- CARD 4: Surplus Food Rescue Donation -->
+<article class="bg-surface-container-lowest rounded-2xl border border-[#E5E7EB] p-space-md shadow-[0px_1px_2px_rgba(23,32,51,0.04),0px_4px_12px_rgba(23,32,51,0.03)] transition-all">
+<div class="flex items-center justify-between gap-2 mb-2.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#DCFCE7] text-[#166534] font-caption text-caption font-semibold">
+<span>🍲 Food Rescue</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[14px]">eco</span> Zero-Waste Verified
+            </span>
+</div>
+<h3 class="text-title-base font-title-base text-on-surface font-bold">
+            Surplus Catering Meals: 40 Boxed Vegetarian Dinners
+          </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1 leading-relaxed">
+            Fresh gourmet meals from conference luncheon • Cooked 2 hrs ago • Dietary: 100% Vegetarian &amp; Nut-Free
+          </p>
+<!-- Donor Profile -->
+<div class="flex items-center justify-between my-3 py-2.5 px-3 rounded-xl bg-surface-container-low border border-outline-variant/30">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-[#E0E7FF] text-[#3730A3] flex items-center justify-center font-bold text-caption font-caption">
+<span class="material-symbols-outlined text-[20px]">restaurant</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-body-sm-medium font-body-sm-medium text-on-surface font-semibold">The Grand Banquet Hall</span>
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+</div>
+<div class="text-caption font-caption text-on-surface-variant flex items-center gap-1">
+<span>Verified Entity</span> • <span>0.8 km away</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-caption font-caption text-[#D97706] bg-[#FEF3C7] p-2 rounded-lg mb-3">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Pickup before 9:00 PM tonight</span>
+</div>
+<!-- Free Tag & Action -->
+<div class="flex items-center justify-between pt-1 border-t border-[#E5E7EB]">
+<div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-md bg-[#DCFCE7] text-[#166534] text-body-sm-medium font-body-sm-medium font-bold">
+                FREE / Mutual Aid
+              </span>
+<span class="text-[11px] text-outline block mt-0.5">Priority for community shelters</span>
+</div>
+<button class="bg-secondary text-on-secondary hover:bg-secondary/90 font-body-sm-medium text-body-sm-medium py-2.5 px-4 rounded-xl shadow-sm transition-all active:scale-[0.98]" type="button">
+              Claim for NGO / Shelter
+            </button>
+</div>
+</article>
+</section>
+<!-- 4. TRUST GUARANTEE FLOATING FOOTER NOTE -->
+<section class="py-2">
+<div class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#F6F8FB] border border-[#E5E7EB] text-center">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<p class="text-caption font-caption text-on-surface-variant font-medium">
+            100% Verified Neighborhood Exchanges • Zero Scam Guarantee
+          </p>
+</div>
+</section>
+<!-- 5. FOOTER (Shared Component JSON Blueprint Compliant) -->
+<footer class="w-full py-space-md border-t border-outline-variant/30 flex flex-col items-center justify-center text-center px-margin-screen max-w-lg mx-auto pb-24">
+<div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-1 mb-2">
+<a class="text-caption font-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<span class="text-outline text-caption">•</span>
+<a class="text-caption font-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<span class="text-outline text-caption">•</span>
+<a class="text-caption font-caption text-primary underline hover:text-primary transition-colors" href="#">Trust Guarantee</a>
+</div>
+<p class="text-caption font-caption font-semibold text-on-surface-variant">
+          © 2024 SubShare. Protected by Mutual Trust Network &amp; 256-Bit Encryption.
+        </p>
+</footer>
+</main>
+<!-- 6. FIXED BOTTOM NAVIGATION BAR (Thumb Zone Optimized) -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-[420px] mx-auto bg-surface-container-lowest/95 backdrop-blur-md border-t border-[#E5E7EB] px-2 py-1.5 z-50">
+<div class="grid grid-cols-5 items-center">
+<!-- Home Tab -->
+<a class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-primary transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-[11px] font-medium mt-0.5">Home</span>
+</a>
+<!-- Explore / Feed Tab (ACTIVE ACCORDING TO USER'S INTENT) -->
+<a class="flex flex-col items-center justify-center py-1 text-primary-container font-medium active:scale-[0.98] relative" href="#">
+<span class="material-symbols-outlined text-[24px] material-symbols-fill">dynamic_feed</span>
+<span class="text-[11px] font-bold mt-0.5">Feed</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container mt-0.5"></span>
+</a>
+<!-- Activity Tab -->
+<a class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-primary transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[24px]">swap_horiz</span>
+<span class="text-[11px] font-medium mt-0.5">Activity</span>
+</a>
+<!-- Messages Tab with Badge '1' -->
+<a class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-primary transition-colors active:scale-[0.98] relative" href="#">
+<div class="relative">
+<span class="material-symbols-outlined text-[24px]">chat_bubble_outline</span>
+<span class="absolute -top-1 -right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-primary-container text-[10px] font-bold text-on-primary">
+              1
+            </span>
+</div>
+<span class="text-[11px] font-medium mt-0.5">Messages</span>
+</a>
+<!-- Profile Tab -->
+<a class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-primary transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[24px]">account_circle</span>
+<span class="text-[11px] font-medium mt-0.5">Profile</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

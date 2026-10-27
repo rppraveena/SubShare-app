@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SubShare - Phone Verification</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-variant": "#d9e2fc",
+            "secondary": "#006e2d",
+            "error": "#ba1a1a",
+            "inverse-primary": "#b4c5ff",
+            "surface-bright": "#f9f9ff",
+            "on-tertiary-fixed": "#2f1500",
+            "on-primary-fixed": "#00174b",
+            "secondary-container": "#7cf994",
+            "surface-container-highest": "#d9e2fc",
+            "surface-container": "#e9edff",
+            "on-secondary-container": "#007230",
+            "surface-container-lowest": "#ffffff",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#b4c5ff",
+            "on-secondary-fixed-variant": "#005320",
+            "on-primary-fixed-variant": "#003ea8",
+            "tertiary-fixed": "#ffdcc3",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#ffede1",
+            "primary-fixed": "#dbe1ff",
+            "surface-dim": "#d1daf4",
+            "surface-container-low": "#f1f3ff",
+            "primary": "#004ac6",
+            "on-surface": "#121b2e",
+            "tertiary": "#824500",
+            "on-tertiary": "#ffffff",
+            "background": "#f9f9ff",
+            "on-error": "#ffffff",
+            "outline-variant": "#c3c6d7",
+            "tertiary-container": "#a65900",
+            "surface": "#f9f9ff",
+            "on-primary-container": "#eeefff",
+            "on-background": "#121b2e",
+            "inverse-surface": "#273044",
+            "inverse-on-surface": "#edf0ff",
+            "tertiary-fixed-dim": "#ffb77d",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "secondary-fixed-dim": "#62df7d",
+            "on-primary": "#ffffff",
+            "on-surface-variant": "#434655",
+            "surface-container-high": "#e1e8ff",
+            "surface-tint": "#0053db",
+            "primary-container": "#2563eb",
+            "outline": "#737686",
+            "on-secondary-fixed": "#002109",
+            "on-error-container": "#93000a",
+            "secondary-fixed": "#7ffc97"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "1.5rem",
+            "space-3xl": "2.5rem",
+            "space-xxs": "0.25rem",
+            "space-sm": "0.75rem",
+            "space-2xl": "2rem",
+            "space-md": "1rem",
+            "margin-screen": "1rem",
+            "space-4xl": "3rem",
+            "gutter-grid": "0.75rem",
+            "space-xs": "0.5rem",
+            "space-lg": "1.25rem"
+          },
+          "fontFamily": {
+            "label-mono": ["Inter"],
+            "body-base": ["Inter"],
+            "headline-h1": ["Inter"],
+            "title-base": ["Inter"],
+            "headline-h3": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-h2": ["Inter"],
+            "body-sm-medium": ["Inter"],
+            "display-hero": ["Inter"],
+            "body-base-medium": ["Inter"],
+            "caption": ["Inter"]
+          },
+          "fontSize": {
+            "label-mono": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-base": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-h1": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "title-base": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "headline-h3": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-h2": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-sm-medium": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "display-hero": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "body-base-medium": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "caption": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    @keyframes cursor-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .animate-cursor {
+      animation: cursor-blink 1s ease-in-out infinite;
+    }
+    .subtle-ambient-shadow {
+      box-shadow: 0px 1px 2px rgba(23, 32, 51, 0.04), 0px 4px 12px rgba(23, 32, 51, 0.03);
+    }
+    .ambient-card-glow {
+      box-shadow: 0px 8px 24px -4px rgba(37, 99, 235, 0.08), 0px 2px 6px -1px rgba(23, 32, 51, 0.03);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col justify-between font-body-base">
+<!-- Top App Navigation Shell (Destination/Task Context) -->
+<header class="w-full bg-surface-container-lowest sticky top-0 z-30 shadow-sm">
+<div class="flex justify-between items-center w-full px-margin-screen h-14 max-w-lg mx-auto">
+<!-- Back Navigation -->
+<button aria-label="Go back" class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<!-- Center Title -->
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<h1 class="font-title-base text-title-base text-on-surface">Verification &amp; Security</h1>
+</div>
+<!-- Right Action / Help -->
+<button class="font-body-sm-medium text-body-sm-medium text-primary hover:text-primary-container px-2 py-1 rounded transition-colors" type="button">
+        Help
+      </button>
+</div>
+<!-- Stepper Progress Bar (Step 2 of 3) -->
+<div class="w-full bg-surface-container-low px-margin-screen py-2.5 max-w-lg mx-auto">
+<div class="flex items-center justify-between max-w-xs mx-auto text-caption font-caption">
+<!-- Step 1: Completed -->
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-[10px] font-bold">
+<span class="material-symbols-outlined text-[13px]" data-icon="check">check</span>
+</span>
+<span class="font-medium text-on-surface">Account</span>
+</div>
+<!-- Connector 1 -->
+<div class="flex-1 h-[2px] mx-2 bg-secondary"></div>
+<!-- Step 2: Active -->
+<div class="flex items-center gap-1.5 text-primary">
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-[11px] font-bold ring-2 ring-primary-fixed">
+            2
+          </span>
+<span class="font-bold text-primary">Phone OTP</span>
+</div>
+<!-- Connector 2 -->
+<div class="flex-1 h-[2px] mx-2 bg-outline-variant/50"></div>
+<!-- Step 3: Pending -->
+<div class="flex items-center gap-1.5 text-outline">
+<span class="w-5 h-5 rounded-full bg-surface-variant text-outline flex items-center justify-center text-[11px] font-medium">
+            3
+          </span>
+<span class="text-outline">Profile</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas Container -->
+<main class="flex-1 max-w-lg w-full mx-auto px-margin-screen py-space-lg flex flex-col gap-space-lg">
+<!-- Primary Verification Card -->
+<section class="bg-surface-container-lowest rounded-2xl p-space-lg border border-outline-variant/40 subtle-ambient-shadow flex flex-col">
+<!-- Top Badge / Device Icon Anchor -->
+<div class="flex items-center justify-between mb-space-md">
+<div class="w-13 h-13 rounded-2xl bg-surface-container flex items-center justify-center relative p-3">
+<span class="material-symbols-outlined text-primary text-[28px]" data-icon="smartphone">smartphone</span>
+<span class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-primary-container text-on-primary flex items-center justify-center ring-2 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-[13px]" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</span>
+</div>
+<!-- Trust Mini Chip -->
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low border border-outline-variant/30 text-caption font-caption text-primary">
+<span class="material-symbols-outlined text-[14px]" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
+<span>Mutual Trust Network</span>
+</div>
+</div>
+<!-- Heading & Description -->
+<h2 class="text-headline-h2 font-headline-h2 text-on-surface tracking-tight mb-2">
+        Verify Your Mobile Number
+      </h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed mb-space-md">
+        A 6-digit verification code has been dispatched to authenticate your residency and activate neighborhood mutual exchanges.
+      </p>
+<!-- Recipient Phone Chip with Inline Edit -->
+<div class="flex items-center justify-between bg-surface-container-low rounded-xl px-3.5 py-2.5 border border-outline-variant/30 mb-space-xl">
+<div class="flex items-center gap-2.5">
+<!-- US Flag Representation -->
+<div aria-label="United States flag" class="w-6 h-4 rounded-[3px] overflow-hidden border border-outline-variant/40 flex flex-col flex-shrink-0">
+<div class="h-2 bg-red-600 flex">
+<div class="w-2.5 bg-blue-800"></div>
+</div>
+<div class="h-2 bg-white flex">
+<div class="w-2.5 bg-blue-800"></div>
+</div>
+</div>
+<span class="font-body-base-medium text-body-base-medium text-on-surface tracking-wide">
+            +1 (555) 019-2834
+          </span>
+</div>
+<button class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-body-sm-medium text-body-sm-medium p-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="edit">edit</span>
+<span>Edit</span>
+</button>
+</div>
+<!-- OTP Numeric Input Cluster -->
+<div class="flex flex-col items-center gap-space-sm mb-space-lg">
+<div class="grid grid-cols-6 gap-2 w-full max-w-sm justify-between">
+<!-- Box 1: 8 -->
+<div class="h-14 rounded-xl bg-surface-container-lowest border-2 border-outline-variant/60 flex items-center justify-center font-headline-h2 text-headline-h2 font-bold text-on-surface shadow-xs">
+            8
+          </div>
+<!-- Box 2: 4 -->
+<div class="h-14 rounded-xl bg-surface-container-lowest border-2 border-outline-variant/60 flex items-center justify-center font-headline-h2 text-headline-h2 font-bold text-on-surface shadow-xs">
+            4
+          </div>
+<!-- Box 3: 2 -->
+<div class="h-14 rounded-xl bg-surface-container-lowest border-2 border-outline-variant/60 flex items-center justify-center font-headline-h2 text-headline-h2 font-bold text-on-surface shadow-xs">
+            2
+          </div>
+<!-- Box 4: 9 -->
+<div class="h-14 rounded-xl bg-surface-container-lowest border-2 border-outline-variant/60 flex items-center justify-center font-headline-h2 text-headline-h2 font-bold text-on-surface shadow-xs">
+            9
+          </div>
+<!-- Box 5: Active Focused State -->
+<div class="h-14 rounded-xl bg-surface-container-lowest border-2 border-primary-container ring-4 ring-primary-container/15 flex items-center justify-center shadow-sm relative">
+<span class="w-[2.5px] h-6 bg-primary-container animate-cursor rounded-full"></span>
+</div>
+<!-- Box 6: Inactive Empty -->
+<div class="h-14 rounded-xl bg-surface-container-low border border-outline-variant/40 flex items-center justify-center text-outline">
+<span class="w-2 h-2 rounded-full bg-outline-variant/60"></span>
+</div>
+</div>
+<!-- Timer / Resend Controls -->
+<div class="flex items-center justify-between w-full max-w-sm px-1 pt-2">
+<div class="flex items-center gap-1 text-on-surface-variant text-caption font-caption">
+<span class="material-symbols-outlined text-[15px]" data-icon="schedule">schedule</span>
+<span>Resend code in <strong class="text-on-surface font-semibold font-label-mono">0:48s</strong></span>
+</div>
+<button class="text-caption font-caption text-outline cursor-not-allowed hover:none font-medium" disabled="" type="button">
+            Resend SMS
+          </button>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-space-sm w-full">
+<!-- Primary Action CTA -->
+<button class="w-full h-[52px] bg-primary-container hover:bg-primary text-on-primary font-body-base-medium text-body-base-medium rounded-xl shadow-md shadow-primary-container/20 flex items-center justify-center gap-2 active:scale-[0.98] transition-all" type="button">
+<span>Verify &amp; Continue</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Secondary Channel: WhatsApp Option -->
+<button class="w-full h-[52px] bg-surface-container-lowest hover:bg-surface-container-low border border-outline-variant/60 text-on-surface font-body-base-medium text-body-base-medium rounded-xl flex items-center justify-center gap-2.5 active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-[#25D366] text-[22px]" data-icon="chat" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span>Verify via WhatsApp</span>
+</button>
+</div>
+</section>
+<!-- Trust & Verification Rationale Card -->
+<section class="bg-surface-container-high/40 rounded-2xl p-space-md border border-outline-variant/30 flex flex-col gap-2.5">
+<div class="flex items-start gap-3">
+<div class="p-2 rounded-xl bg-surface-container text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div class="flex-1">
+<h3 class="font-body-base-medium text-body-base-medium text-on-surface mb-0.5">
+            Why phone verification?
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-normal">
+            TrustShare authenticates authentic phone numbers to eliminate bot listings, protect peer carpooling, and safeguard neighborhood equipment handovers.
+          </p>
+</div>
+</div>
+<!-- Security Guarantee Pill -->
+<div class="mt-1 pt-2.5 border-t border-outline-variant/20 flex items-center justify-between text-caption font-caption text-on-surface-variant">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[15px]" data-icon="lock">lock</span>
+<span class="font-medium">256-Bit Encrypted &amp; Never Shared</span>
+</div>
+<span class="text-outline font-label-mono">ISO-27001</span>
+</div>
+</section>
+<!-- Support Help Link -->
+<div class="text-center py-1">
+<a class="font-body-sm-medium text-body-sm-medium text-primary hover:underline inline-flex items-center gap-1" href="#support">
+<span class="material-symbols-outlined text-[16px]" data-icon="contact_support">contact_support</span>
+<span>Having trouble? Contact Neighbor Support</span>
+</a>
+</div>
+</main>
+<!-- Footer Component from Shared Library -->
+<footer class="w-full py-space-md bg-surface-bright border-t border-outline-variant/30 mt-auto">
+<div class="flex flex-col items-center justify-center text-center px-margin-screen w-full max-w-lg mx-auto pb-safe">
+<div class="flex items-center gap-space-sm mb-2">
+<a class="text-caption font-caption text-on-surface-variant hover:text-primary transition-colors" href="#privacy">Privacy Policy</a>
+<span class="text-outline text-[10px]">•</span>
+<a class="text-caption font-caption text-on-surface-variant hover:text-primary transition-colors" href="#terms">Terms of Service</a>
+<span class="text-outline text-[10px]">•</span>
+<a class="text-caption font-caption text-primary underline hover:text-primary-container transition-colors" href="#guarantee">Trust Guarantee</a>
+</div>
+<p class="text-caption font-caption text-outline">
+        © 2024 SubShare. Protected by Mutual Trust Network &amp; 256-Bit Encryption.
+      </p>
+</div>
+</footer>
+</body></html>

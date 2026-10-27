@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SubShare - Welcome</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-bright": "#f9f9ff",
+            "surface-container-highest": "#d9e2fc",
+            "surface-variant": "#d9e2fc",
+            "surface-container-lowest": "#ffffff",
+            "primary": "#004ac6",
+            "background": "#f9f9ff",
+            "surface": "#f9f9ff",
+            "surface-dim": "#d1daf4",
+            "on-tertiary-container": "#ffede1",
+            "tertiary-container": "#a65900",
+            "surface-container-low": "#f1f3ff",
+            "surface-container-high": "#e1e8ff",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "outline": "#737686",
+            "on-primary-container": "#eeefff",
+            "on-error": "#ffffff",
+            "on-surface": "#121b2e",
+            "on-tertiary-fixed": "#2f1500",
+            "on-secondary-fixed": "#002109",
+            "secondary-fixed-dim": "#62df7d",
+            "inverse-primary": "#b4c5ff",
+            "tertiary-fixed": "#ffdcc3",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed-variant": "#005320",
+            "on-secondary": "#ffffff",
+            "inverse-surface": "#273044",
+            "surface-tint": "#0053db",
+            "on-primary": "#ffffff",
+            "secondary-container": "#7cf994",
+            "tertiary": "#824500",
+            "on-primary-fixed-variant": "#003ea8",
+            "on-surface-variant": "#434655",
+            "on-background": "#121b2e",
+            "secondary": "#006e2d",
+            "tertiary-fixed-dim": "#ffb77d",
+            "on-error-container": "#93000a",
+            "primary-container": "#2563eb",
+            "secondary-fixed": "#7ffc97",
+            "outline-variant": "#c3c6d7",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#b4c5ff",
+            "inverse-on-surface": "#edf0ff",
+            "on-secondary-container": "#007230",
+            "primary-fixed": "#dbe1ff",
+            "on-primary-fixed": "#00174b",
+            "surface-container": "#e9edff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-3xl": "2.5rem",
+            "space-4xl": "3rem",
+            "space-xl": "1.5rem",
+            "gutter-grid": "0.75rem",
+            "space-md": "1rem",
+            "space-sm": "0.75rem",
+            "margin-screen": "1rem",
+            "space-2xl": "2rem",
+            "space-lg": "1.25rem",
+            "space-xs": "0.5rem",
+            "space-xxs": "0.25rem"
+          },
+          "fontFamily": {
+            "display-hero": ["Inter"],
+            "body-sm-medium": ["Inter"],
+            "title-base": ["Inter"],
+            "headline-h3": ["Inter"],
+            "headline-h2": ["Inter"],
+            "caption": ["Inter"],
+            "headline-h1": ["Inter"],
+            "body-base": ["Inter"],
+            "label-mono": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-base-medium": ["Inter"]
+          },
+          "fontSize": {
+            "display-hero": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "body-sm-medium": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "title-base": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "headline-h3": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-h2": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "caption": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "headline-h1": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-base": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-mono": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-base-medium": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col justify-between selection:bg-primary/20">
+<!-- TopAppBar Component (from Shared Components JSON) -->
+<header class="w-full bg-surface border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-margin-screen h-14 max-w-lg mx-auto">
+<div class="text-title-base font-title-base font-bold text-primary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="shield">shield</span>
+<span>SubShare</span>
+</div>
+<button class="text-body-sm-medium font-body-sm-medium text-primary hover:bg-surface-container hover:text-on-surface px-space-xs py-1 rounded-lg transition-transform duration-150 active:scale-[0.98]" type="button">
+        Help
+      </button>
+</div>
+</header>
+<!-- Main Canvas Flow -->
+<main class="w-full max-w-lg mx-auto flex-1 flex flex-col px-margin-screen pt-space-xs pb-space-sm">
+<!-- Verified Trust Badge Header Pill -->
+<div class="flex items-center justify-between mt-space-xs mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<img alt="TrustShare Shield Logo" class="w-10 h-10 rounded-lg object-contain shadow-sm border border-outline-variant/30 bg-surface-container-lowest p-1" src="https://lh3.googleusercontent.com/aida/AEtjO1X_QSPZxPlZyiEdo4y5QFTFwt7qOUvcRzsMabqfgJMsfq9FeTyvNOokeeg7DGZ2jNW_ng0MJL0E28PWGSaq7ady88TwdorAwJHdcUQjO9ODhBkX8caAnB8ASFANjqLUN5VYPmp_SXpi9cCJMbUyAZyYxElrvdvccyri6F_4TYNss42vLl55Z3SYXBz-mOBBRm77krQ-m2nDOn9zBuZnnUmLVxpuuMWBSDPcmP1en9DkTSUxLbVCL8TxF3s"/>
+<div>
+<div class="text-headline-h3 font-headline-h3 text-on-surface tracking-tight leading-tight">SubShare</div>
+<p class="text-caption font-caption text-on-surface-variant">Neighborhood Aid &amp; Exchange</p>
+</div>
+</div>
+<div class="inline-flex items-center gap-1.5 bg-surface-container-low text-secondary border border-secondary-container px-space-xs py-1 rounded-full text-caption font-caption font-medium">
+<span class="material-symbols-outlined text-[15px] leading-none" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Powered by TrustShare Identity</span>
+</div>
+</div>
+<!-- Hero Visual Card -->
+<div class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-xl overflow-hidden shadow-sm">
+<div class="relative w-full h-52 bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A warm and inviting modern vector digital art scene of diverse neighbors helping each other in a suburban community garden and neighborhood street. People are sharing boxes of fresh vegetables, offering rides in an electric car, and greeting elderly residents with care packages under a soft blue sky. The visual style is crisp, clean, and friendly, utilizing a modern light palette of cool whites, soft azure blues, gentle greens, and subtle warm accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6JIxxy2rWgZ3GhyihdDNq3tuG_kfkHIDKpiskPHWlgF434X09xjIrZfGwdUvyCpM5O9rbL6SQ1a8kuU1b7CC-zZPJIJ985i7dd_uco1MGgUbfw3pZN1SXLLRV1xuxCHW5eTEilZVjZo948VULT9P-2HruxqwmGuLxZiTz9nzEdpnnh7Eov4D71EssP7r3dE1tgIknxJisieSfkpjl1d5v1XH0aEHajIneVhL9AVuzdqNb4hyEcle8dVoBHXGJafuhWbO9Ur_GgPas"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
+<div class="absolute top-space-xs right-space-xs bg-surface-container-lowest/90 backdrop-blur-sm px-2.5 py-1 rounded-full border border-outline-variant/30 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-label-mono font-label-mono text-on-surface uppercase tracking-wider">Active Mutual Aid</span>
+</div>
+</div>
+<!-- Resource Categories Sub-Row -->
+<div class="grid grid-cols-4 divide-x divide-outline-variant/25 bg-surface-container-lowest py-2.5 border-t border-outline-variant/20 text-center">
+<div class="flex flex-col items-center">
+<span class="text-body-sm font-body-sm">🚗</span>
+<span class="text-caption font-caption text-on-surface-variant font-medium mt-0.5">Carpool</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-body-sm font-body-sm">🥦</span>
+<span class="text-caption font-caption text-on-surface-variant font-medium mt-0.5">Produce</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-body-sm font-body-sm">🩸</span>
+<span class="text-caption font-caption text-on-surface-variant font-medium mt-0.5">Aid Kits</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-body-sm font-body-sm">🎟️</span>
+<span class="text-caption font-caption text-on-surface-variant font-medium mt-0.5">Passes</span>
+</div>
+</div>
+</div>
+<!-- Value Proposition Section -->
+<div class="text-center mt-space-md mb-space-sm">
+<h1 class="text-headline-h2 font-headline-h2 text-on-surface">
+        Share Resources. Help Communities.
+      </h1>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1.5 max-w-sm mx-auto">
+        Trusted people. Verified resources. Faster connections.
+      </p>
+</div>
+<!-- Trust Badges Row -->
+<div class="flex flex-wrap justify-center items-center gap-space-xs my-space-xs">
+<div class="inline-flex items-center gap-1 bg-surface-container-high text-primary px-space-xs py-1 rounded-full border border-primary/20 text-caption font-caption">
+<span class="material-symbols-outlined text-sm leading-none" data-icon="check_circle">check_circle</span>
+<span>Verified Identity</span>
+</div>
+<div class="inline-flex items-center gap-1 bg-surface-container-high text-primary px-space-xs py-1 rounded-full border border-primary/20 text-caption font-caption">
+<span class="material-symbols-outlined text-sm leading-none" data-icon="security">security</span>
+<span>Protected Transactions</span>
+</div>
+<div class="inline-flex items-center gap-1 bg-tertiary-fixed text-on-tertiary-fixed-variant px-space-xs py-1 rounded-full border border-tertiary/20 text-caption font-caption font-medium">
+<span class="material-symbols-outlined text-sm leading-none" data-icon="bolt">bolt</span>
+<span>Emergency Network</span>
+</div>
+</div>
+<!-- Primary Action Controls -->
+<div class="space-y-space-xs mt-space-md w-full">
+<!-- Sign up with Email/Phone -->
+<button class="w-full h-[52px] bg-primary-container hover:bg-primary text-on-primary rounded-xl font-body-base-medium text-body-base-medium flex items-center justify-center gap-2 shadow-sm transition-transform duration-150 active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="mail">mail</span>
+<span>Sign up with Email or Phone</span>
+</button>
+<!-- Continue with Google Button -->
+<button class="w-full h-[52px] bg-surface-container-lowest border border-outline-variant/50 hover:bg-surface-container-low text-on-surface rounded-xl font-body-base-medium text-body-base-medium flex items-center justify-center gap-3 shadow-sm transition-transform duration-150 active:scale-[0.98]" type="button">
+<svg class="w-5 h-5" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
+</svg>
+<span>Continue with Google</span>
+</button>
+</div>
+<!-- Login Link Prompt -->
+<div class="text-center mt-space-sm">
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+        Already have an account? 
+        <a class="text-primary font-body-sm-medium font-semibold underline hover:text-on-primary-fixed-variant" href="#">Log in</a>
+</p>
+</div>
+</main>
+<!-- Footer Component (from Shared Components JSON) -->
+<footer class="w-full py-space-md border-t border-outline-variant/30 bg-surface-bright">
+<div class="flex flex-col items-center justify-center text-center px-margin-screen w-full max-w-lg mx-auto">
+<div class="flex items-center justify-center gap-space-md mb-2">
+<a class="text-caption font-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<span class="text-outline-variant">•</span>
+<a class="text-caption font-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<span class="text-outline-variant">•</span>
+<a class="text-caption font-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Trust Guarantee</a>
+</div>
+<p class="text-caption font-caption text-on-surface-variant">
+        © 2024 SubShare. Protected by Mutual Trust Network &amp; 256-Bit Encryption.
+      </p>
+</div>
+</footer>
+</body></html>
