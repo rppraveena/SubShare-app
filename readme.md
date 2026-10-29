@@ -1,5 +1,7 @@
 SubShare: A Community Resource Sharing and Coordination Platform
+
 Publication Status: Google Play Store (Published)
+
 Application URL: https://play.google.com/store/apps/details?id=com.subshare.app
 
 ![Flutter](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
