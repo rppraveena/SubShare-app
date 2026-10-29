@@ -1,4 +1,6 @@
-#  SubShare: Smart Subscription Slot Sharing and Payment Tracking System
+SubShare: A Community Resource Sharing and Coordination Platform
+Publication Status: Google Play Store (Published)
+Application URL: https://play.google.com/store/apps/details?id=com.subshare.app
 
 ![Flutter](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -6,7 +8,7 @@
 ![Capacitor](https://img.shields.io/badge/Capacitor-119EFF?style=for-the-badge&logo=capacitor&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-> ** Published on Google Play Store (India)**
+> Published on Google Play Store (India)
 > SubShare is a hyper-local, community-driven platform designed to connect individuals and organizations to share resources, save money, and help the community. 
 
 ##  Overview
